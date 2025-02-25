@@ -1,0 +1,186 @@
+Java String join()
+---------------------
+The Java String class join() method returns a string joined with a given delimiter. In the String join() method, the delimiter is copied for each element. The join() method is included in the Java string since JDK 1.8.
+
+
+There are two types of join() methods in the Java String class.
+
+Signature
+----------
+The signature or syntax of the join() method is given below:
+
+
+	1) public static String join(CharSequence delimiter, CharSequence... elements)    
+		
+	2) public static String join(CharSequence delimiter, Iterable<? extends CharSequence> elements)    
+	
+	
+Parameters
+------------
+delimiter : char value to be added with each element
+
+elements : char value to be attached with delimiter
+
+
+
+Returns
+------------
+joined string with delimiter
+
+
+Exception Throws
+------------------
+NullPointerException if element or delimiter is null.
+
+
+Since
+------------
+1.8
+
+
+
+Internal Implementation
+-----------------------
+		// type - 1  
+		public static String join(CharSequence delimiter, CharSequence... elements)   
+		{  
+		        Objects.requireNonNull(elements);  
+		        Objects.requireNonNull(delimiter);        
+		          
+		        StringJoiner jnr = new StringJoiner(delimiter);  
+		        for (CharSequence c: elements)   
+		        {  
+		            jnr.add(c);  
+		        }  
+		        return jnr.toString();  
+		}   
+		
+		// type - 2  
+		public static String join(CharSequence delimiter, CharSequence... elements)   
+		{  
+		        Objects.requireNonNull(elements);  
+		        Objects.requireNonNull(delimiter);        
+		          
+		        StringJoiner jnr = new StringJoiner(delimiter);  
+		        for (CharSequence c: elements)   
+		        {  
+		            jnr.add(c);  
+		        }  
+		        return jnr.toString();  
+		}  
+		  
+		public static String join(CharSequence delimiter, Iterable<? extends CharSequence> elements)   
+		{  
+		  
+	        Objects.requireNonNull(elements);  
+	        Objects.requireNonNull(delimiter);  
+	          
+	        StringJoiner jnr = new StringJoiner(delimiter);  
+	        for (CharSequence c: elements)   
+	        {  
+	            joiner.add(c);  
+	        }  
+	        return jnr.toString();  
+	    }  
+	
+	
+Java String join() Method Example 1
+-----------------------------------	
+	
+		FileName: StringJoinExample1.java
+		--------
+
+		public class StringJoinExample1
+		{  
+			public static void main(String args[])
+			{  
+				String joinString1 = String.join("-","welcome","to","javatpoint");  
+				System.out.println(joinString1);  
+			}
+		}  
+		
+
+
+Java String join() Method Example 2
+-----------------------------------	
+We can use a delimiter to format the string as we did in the below example to show the date and time.
+
+		FileName: StringJoinExample2.java
+		--------
+
+		public class StringJoinExample2 
+		{  
+		    public static void main(String[] args) 
+		    {          
+		        String date = String.join("/","25","06","2018");    
+		        System.out.print(date);    
+		        String time = String.join(":", "12","10","10");  
+		        System.out.println(" "+time);  
+		    }  
+		}  
+		
+		
+
+Java String join() Method Example 3
+-----------------------------------	
+In the case of using null as a delimiter, we get the null pointer exception. The following example confirms the same.
+
+		FileName: StringJoinExample3.java
+		----------
+		
+		public class StringJoinExample3   
+		{  
+			public static void main(String argvs[])  
+			{  
+				String str = null;  
+				str = String.join(null, "abc", "bcd", "apple");  
+				System.out.println(str);  
+			}  
+		}  		
+			
+			
+Java String join() Method Example 4
+-----------------------------------	
+			
+		FileName: StringJoinExample4.java
+		--------
+		
+		public class StringJoinExample4  
+		{  
+			// main method  
+			public static void main(String argvs[])  
+			{  
+				String str = null;  
+				str = String.join("India", null);  
+				System.out.println(str);  
+			}  
+		}  
+			
+			
+Java String join() Method Example 5
+------------------------------------I
+If the elements that have to be attached with the delimiter have some strings, in which a few of them are null, then the null elements are treated as a normal string, and we do not get any exception or error. Let's understand it through an example.
+		
+		FileName: StringJoinExample5.java
+		--------
+		
+		public class StringJoinExample5  
+		{  
+			// main method  
+			public static void main(String argvs[])  
+			{  
+				String str = null;  
+				  
+				// one of the element is null however it will be treated as normal string  
+				str = String.join("-", null, " wake up ", " eat ", " write content for JTP ", " eat ", " sleep ");  
+				System.out.println(str);  
+			}  
+		}  			
+				
+				
+		
+		
+		
+		
+		
+		

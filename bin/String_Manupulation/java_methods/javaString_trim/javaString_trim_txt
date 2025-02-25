@@ -1,0 +1,15 @@
+
+Java String trim() method
+The String class trim() method eliminates white spaces before and after the String.
+
+		Test_trim.java
+
+		public class Test_trim  
+		{  
+			public static void main(String ar[])  
+			{  
+				String s="  Sachin  ";    
+				System.out.println(s);//  Sachin      
+				System.out.println(s.trim());//Sachin    
+			}  
+		}  

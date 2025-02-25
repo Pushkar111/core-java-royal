@@ -1,0 +1,202 @@
+Java String lastIndexOf()
+------------------------------
+The Java String class lastIndexOf() method returns the last index of the given character value or substring. If it is not found, it returns -1. The index counter starts from zero.
+
+
+Signature
+----------
+There are four types of lastIndexOf() method in Java. The signature of the methods are given below:
+
+
+===================================================================================================================================================
+| No.				Method													Description															  |
+===================================================================================================================================================
+| 1		int lastIndexOf(int ch)									It returns last index position for the given char value							  |	
+| 2		int lastIndexOf(int ch, int fromIndex)					It returns last index position for the given char value and from index			  |
+| 3		int lastIndexOf(String substring)						It returns last index position for the given substring						      |
+| 4		int lastIndexOf(String substring, int fromIndex)		It returns last index position for the given substring and from index			  |
+===================================================================================================================================================
+
+
+Parameters
+----------
+• ch: char value i.e. a single character e.g. 'a'
+
+• fromIndex: index position from where index of the char value or substring is retured
+
+• substring: substring to be searched in this string
+
+
+
+Returns
+----------
+last index of the string
+
+
+Internal Implementation
+------------------------------
+The internal implementation of the four types of the lastIndexOf() method is mentioned below.
+
+
+		1. int lastIndexOf(int ch)
+			
+			public int lastIndexOf(int ch)   
+			{  
+			   return lastIndexOf(ch, value.length - 1);  
+			}  
+		
+
+		2. int lastIndexOf(int ch, int fromIndex)
+	
+			public int lastIndexOf(int ch, int fromIndex)   
+			{  
+				if (ch < Character.MIN_SUPPLEMENTARY_CODE_POINT)   
+				{  
+					// handling most of the cases here   
+					// negative value means invalid code point  
+					final char[] val = this.value;  
+					int j = Math.min(fromIndex, val.length - 1);  
+					for (; jj >= 0; j--)   
+					{  
+						if (val[i] == ch)   
+						{  
+							return j;  
+						}  
+					}  
+						return -1;  
+				}   
+				else   
+				{  
+					return lastIndexOfSupplementary(ch, fromIndex);  
+				}  
+			}  
+				  
+			// internal implementation of the method lastIndexOfSupplementary()  
+			private int lastIndexOfSupplementary(int c, int fIndex)   
+			{  
+				if (Character.isValidCodePoint(c))   
+				{  
+					final char[] val = this.value;  
+					char h = Character.highSurrogate(c);  
+					char l = Character.lowSurrogate(c);  
+					int j = Math.min(fIndex, value.length - 2);  
+					for (; j >= 0; j--)   
+					{  
+						if (val[j] == h && val[j + 1] == l)   
+						{  
+							return j;  
+						}  
+					}  
+							
+				}  
+				return -1;  
+			}  
+			
+
+		3. int lastIndexOf(String subString)
+				
+			public int lastIndexOf(String subString)   
+			{  
+				return lastIndexOf(subString, value.length);  
+			}  
+
+
+		4. int lastIndexOf(String substring, int fromIndex)
+		
+			public int lastIndexOf(String substring, int fromIndex)   
+			{  
+				public int lastIndexOf(String str, int fromIndex)   
+				{  
+					return lastIndexOf(value, 0, value.length, str.value, 0, str.value.length, fromIndex);  
+				}   
+			}  
+				  
+				// src             the characters that are being searched.  
+				// srcOffset  provides the offset of the src string.  
+				// srcCount  number of the source string.  
+				// tar             the characters that are being searched for.  
+				// fromIndex  the index to start search from.  
+				static int lastIndexOf(char[] src, int srcOffset, int srcCount, String tar, int fromIndex)   
+				{  
+					return lastIndexOf(src, srcOffset, srcCount, tar.value, 0, tar.value.length, fromIndex);  
+				}  
+				  
+				  
+				static int lastIndexOf(char[] src, int srcOffset, int srcCount, char[] tar, int tarOffset, int tarCount, int fromIndex)   
+				{  
+					int rightIndex = srcCount - tarCount;  
+					
+					if (fromIndex < 0)   
+					{  
+					    return -1;  
+					}  
+					if (fromIndex > rightIndex)   
+					{  
+					    fromIndex = rightIndex;  
+					}  
+					// an Empty string is always a match.  
+					if (tarCount == 0)   
+					{  
+					    return fromIndex;  
+					}  
+					  
+					int lastStrIndex = tarOffset + tarCount - 1;  
+					char lastStrChar = tar[strLastIndex];  
+					int min = srcOffset + tarCount - 1;  
+					int j = min + fromIndex;  
+					  
+					startLookForLastChar:  
+					while (true)   
+					{  
+						while (j >= min && src[j] != lastStrChar)   
+						{  
+							j = j - 1;  
+						}  
+						if (j < min)   
+						{  
+							return -1;  
+						}  
+						int i = j - 1;  
+						int begin = i - (tarCount - 1);  
+						int m = lastStrIndex - 1;  
+						  
+						while (i > begin)   
+						{  
+							if (source[i--] != target[m--])   
+							{  
+								j = j + 1;  
+								continue startLookForLastChar;  
+							}  
+						}  
+					return begin - srcOffset + 1;  
+				}  
+			}  
+
+			
+			
+			
+			
+			
+			
+			
+Java String lastIndexOf() method example
+-------------------------------------------
+	
+		FileName: LastIndexOfExample.java
+		--------
+				
+		public class LastIndexOfExample
+		{  
+			public static void main(String args[])
+			{  
+				String s1 = "this is index of example";//there are 2 's' characters in this sentence  
+				int index1 = s1.lastIndexOf('s');//returns last index of 's' char value  
+				System.out.println(index1);//6  
+			}
+		}  			
+					
+					
+					
+			
+			
+			

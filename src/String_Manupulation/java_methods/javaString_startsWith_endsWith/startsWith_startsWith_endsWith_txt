@@ -1,0 +1,18 @@
+startsWith_endsWith
+-------------------
+
+
+Java String startsWith() and endsWith() method
+	The method startsWith() checks whether the String starts with the letters passed as arguments and endsWith() method checks whether the String ends with the letters passed as arguments.
+		
+		startsWith_endsWith.java
+		
+		public class startsWith_endsWith  
+		{  
+			public static void main(String args[])  
+			{  
+				 String s = "Sachin";    
+				 System.out.println(s.startsWith("Sa"));//true    
+				 System.out.println(s.endsWith("n"));//true    
+			}  
+		}  

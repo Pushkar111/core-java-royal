@@ -1,0 +1,85 @@
+✍ Difference between String and StringBuffer
+----------------------------------------------------
+► There are many differences between String and StringBuffer. A list of differences between String and StringBuffer are given below:
+
+
+======================================================================================================================================================================================================================================
+|	No.	|														String																	    |								StringBuffer                                             |
+======================================================================================================================================================================================================================================
+|	1)	|   The String class is immutable.																									|	The StringBuffer class is mutable.                                                   |
+|	2)	|   String is slow and consumes more memory when we concatenate too many strings because every time it creates new instance.		|	StringBuffer is fast and consumes less memory when we concatenate t strings.         |
+|	3)	|   String class overrides the equals() method of Object class. So you can compare the contents of two strings by equals() method.	|	StringBuffer class doesn't override the equals() method of Object class.             |
+|	4)	|   String class is slower while performing concatenation operation.																|	StringBuffer class is faster while performing concatenation operation.               |
+|	5)	|   String class uses String constant pool.																							|	StringBuffer uses Heap memory                                                        |
+======================================================================================================================================================================================================================================
+
+
+
+		==========================================================================
+				Go in Phothos Folder and see string-vs-stringbuffer.png
+		==========================================================================
+
+
+⦿	Performance Test of String and StringBuffer
+----------------------------------------------------
+		ConcatTest.java
+		
+		public class ConcatTest
+		{  
+		    public static String concatWithString()    
+		    {  
+		        String str = "Royal";  
+		        for (int i = 0; i < 10000; i++)
+		        {  
+		            str = str + "Technosoft";  
+		        }  
+		        return str;  
+		    }  
+		    
+		    public static String concatWithStringBuffer()
+		    {  
+		        StringBuffer sb = new StringBuffer("Royal");  
+		        for (int i = 0; i < 10000; i++)
+		        {  
+		            sb.append("Technosoft");  
+		        }  
+		        return sb.toString();  
+		    }  
+		    
+		    public static void main(String[] args)
+		    {  
+		        long startTime = System.currentTimeMillis();  
+		        concatWithString();  
+		        System.out.println("Time taken by Concating with String: " + (System.currentTimeMillis() - startTime) + "ms");  
+		        startTime = System.currentTimeMillis();  
+		        concatWithStringBuffer();  
+		        System.out.println("Time taken by Concating with  StringBuffer: " + (System.currentTimeMillis() - startTime) + "ms");  
+		    }  
+		} 
+
+
+⦿	String and StringBuffer HashCode Test
+----------------------------------------------------
+► As we can see in the program given below, String returns new hashcode while performing concatenation but the StringBuffer class returns same hashcode.
+
+		InstanceTest.java
+		
+		public class InstanceTest
+		{  
+		    public static void main(String args[])
+		    {  
+		        System.out.println("Hashcode test of String:");  
+		        String str = "Royal";  
+		        System.out.println(str.hashCode());  
+		        str = str + "Technosoft";  
+		        System.out.println(str.hashCode());  
+		   
+		        System.out.println("Hashcode test of StringBuffer:");  
+		        StringBuffer sb = new StringBuffer("Royal");  
+		        System.out.println(sb.hashCode());  
+		        sb.append("Technosoft");  
+		        System.out.println(sb.hashCode());  
+		    }  
+		}  
+		
+		

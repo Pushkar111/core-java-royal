@@ -1,0 +1,153 @@
+
+=============
+ArrayList - add - non-synchronized 
+vector - add - synchronized -> threadSafe(At a Time Single Thread Execuation)
+LinkedList - add - non-synchronized 
+=============
+		StringBuilder -- non-synchronized 
+		StringBuffer -- synchronized -> threadSafe(At a Time Single Thread Execuation)
+=============
+
+
+
+
+=============
+
+
+-- arrayList  - fix Data     - store - and - display
+-- vector     - application  - use   - multithreading
+-- LinkedList - when we need - [insert, update and delete]
+
+
+=============
+HaseSet - insertion - not maintain
+		- duplicate - not allow
+
+
+LinkedHaseSet - insertion - maintain
+			  - duplicate - not allow
+
+TreeSet - sorting - asc
+	    - duplicate - not allow
+=============
+
+Map -- [Same as Dictonary[python]]
+
+=============
+
+
+
+
+1) List Interface
+------------------
+	-> Characteristics:
+			◦  extends Collection interface 
+			◦  Ordered collection (by index), 
+			◦  Fast iteration and fast random access
+			◦  Allows duplicate elements
+			◦  not Maintains sorted order
+	
+	-> Implementations:
+		1) ArrayList
+			◦  Not synchronized, so not thread-safe 
+			◦  Implements List interface using a dynamically resizing array
+			◦  Fast iteration and fast random access
+			◦  Allows duplicate elements
+		2) Vector
+			◦  Synchronized, so thread-safe [thread-Safe(At a Time Single Thread Execuation)]
+			◦  Implements List interface using a dynamically resizing array
+			◦  Fast iteration and fast random access
+			◦  Allows duplicate elements
+		3) LinkedList
+			◦  Not synchronized, so not thread-safe
+			◦  Implements List interface using a doubly-linked list
+			◦  Fast insertion and deletion, but slow random access
+			◦  Allows duplicate elements
+
+2) Set Interface
+----------------
+	-> Characteristics:
+		◦  extends Collection interface 
+		◦  Not synchronized, so not thread-safe
+		◦  Unordered collection, 
+		◦  Fast lookup, insertion, and deletion
+		◦  not Allows duplicate elements
+	
+	-> Implementations:
+		1) HashSet
+			◦  Implements Set interface using a hash table
+			◦  Not synchronized, so not thread-safe
+			◦  Fast lookup, insertion, and deletion
+			◦  not Allows duplicate elements
+			◦  not Maintains insertion order
+		2) LinkedHashSet
+			◦  Implements Set interface using a doubly-linked list and a hash table
+			◦  Not synchronized, so not thread-safe
+			◦  Fast lookup, insertion, and deletion
+			◦  not Allows duplicate elements
+			◦  Maintains insertion order
+		3) TreeSet
+			◦  Implements Set interface using a balanced binary search tree
+			◦  Not synchronized, so not thread-safe
+			◦  Fast lookup, insertion, and deletion
+			◦  not Allows duplicate elements
+			◦  Maintains sorted order
+
+3) Queue Interface
+------------------
+	-> Characteristics:
+		◦  extends Collection interface 
+		◦  Ordered collection (by insertion order)
+		◦  Fast insertion and deletion
+		◦  Allows duplicate elements
+		◦  not Maintains sorted order
+	
+	-> Implementations:
+		1) PriorityQueue
+			◦  Implements Queue interface using a priority heap
+			◦  Not synchronized, so not thread-safe
+			◦  Fast insertion and deletion
+			◦  Allows duplicate elements
+			◦  not Maintains sorted order 
+			
+4) Map Interface
+----------------
+	-> Characteristics:
+		◦  extends Collection interface 
+		◦  Unordered collection of key-value pairs
+		◦  Fast lookup, insertion, and deletion
+	
+	-> Implementations:
+		1) HashMap
+			◦  Implements Map interface using a hash table
+			◦  Not synchronized, so not thread-safe
+			◦  Fast lookup, insertion, and deletion
+			◦  Allows one null key and multiple null values
+			◦  not Maintains insertion order
+		2) LinkedHashMap
+			◦  Implements Map interface using a doubly-linked list and a hash table
+			◦  Not synchronized, so not thread-safe
+			◦  Fast lookup, insertion, and deletion
+			◦  Allows one null key and multiple null values
+			◦  Maintains insertion order
+		3) TreeMap
+			◦  Implements Map interface using a balanced binary search tree
+			◦  Not synchronized, so not thread-safe
+			◦  Fast lookup, insertion, and deletion
+			◦  Maintains sorted order
+						
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

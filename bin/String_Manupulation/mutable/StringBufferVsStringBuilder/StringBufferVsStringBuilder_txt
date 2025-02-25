@@ -1,0 +1,80 @@
+
+
+✍ Difference between StringBuffer and StringBuilder
+----------------------------------------------------
+► Java provides three classes to represent a sequence of characters: String, StringBuffer, and StringBuilder. The String class is an immutable class whereas StringBuffer and StringBuilder classes are mutable. There are many differences between StringBuffer and StringBuilder. The StringBuilder class is introduced since JDK 1.5.
+
+► A list of differences between StringBuffer and StringBuilder is given below:
+
+=====================================================================================================================================================================================================================================================================================
+|	No.	|																StringBuffer														|StringBuilder                                                                                                                          | 
+=====================================================================================================================================================================================================================================================================================
+|   1)	|       StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.	|StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.     |
+|   2)	|       StringBuffer is less efficient than StringBuilder.																			|StringBuilder is more efficient than StringBuffer.                                                                                     |
+|   3)	|       StringBuffer was introduced in Java 1.0																						|StringBuilder was introduced in Java 1.5                                                                                               |
+=====================================================================================================================================================================================================================================================================================
+
+
+⦿	StringBuffer Example
+------------------------
+		BufferTest.java     
+		
+		//Java Program to demonstrate the use of StringBuffer class.  
+		public class BufferTest
+		{  
+		    public static void main(String[] args)
+		    {  
+		        StringBuffer sb = new StringBuffer("hello");  
+		        sb.append("java");  
+		        System.out.println(sb);  
+		    }  
+		}  
+
+		
+⦿	StringBuilder Example
+-------------------------
+		BuilderTest.java
+		
+		//Java Program to demonstrate the use of StringBuilder class.  
+		public class BuilderTest
+		{  
+		    public static void main(String[] args)
+		    {  
+		        StringBuilder sB = new StringBuilder("hello");  
+		        sB.append("java");  
+		        System.out.println(sB);  
+		    }  
+		}  
+		
+⦿	Performance Test of StringBuffer and StringBuilder
+------------------------------------------------------
+► Let's see the code to check the performance of StringBuffer and StringBuilder classes.
+
+		ConcatTest.java
+		
+		//Java Program to demonstrate the performance of StringBuffer and StringBuilder classes.  
+		public class ConcatTest
+		{  
+		    public static void main(String[] args)
+		    {  
+		        long startTime;
+	
+		        startTime = System.currentTimeMillis();  
+		        StringBuffer sb = new StringBuffer("Royal");  
+		        for (int i=0; i<10000; i++)
+		        {  
+		            sb.append("Technosoft");  
+		        }  
+		        System.out.println("Time taken by StringBuffer: " + (System.currentTimeMillis() - startTime) + "ms");  
+		        
+		        startTime = System.currentTimeMillis();  
+		        StringBuilder sb2 = new StringBuilder("Royal");  
+		        for (int i=0; i<10000; i++)
+		        {  
+		            sb2.append("Technosoft");  
+		        }  
+		        System.out.println("Time taken by StringBuilder: " + (System.currentTimeMillis() - startTime) + "ms");  
+		    }  
+		}  		
+				
+				

@@ -1,0 +1,25 @@
+✍ ArrayList vs LinkedList :-
+-----------------------------
+► ArrayList and LinkedList both implement the List interface and maintain insertion order. 
+  Both are non-synchronized classes.
+	
+		==========================================================================
+				Go in Phothos Folder and see ArrayList_vs_LinkedList.png
+		==========================================================================
+
+
+⦿	The important points about Java LinkedList are:
+---------------------------------------------------
+	◦  Java LinkedList class can contain duplicate elements.
+	◦  Java LinkedList class maintains insertion order.
+	◦  Java LinkedList class is non synchronized.
+	◦  In Java LinkedList class, manipulation is fast because no shifting needs to occur.
+	◦  Java LinkedList class can be used as a list, stack or queue.
+	
+
+	
+-------------------------------------------------------------------------------------------------------------------
+-> After that see example LinkedList1.java
+						  LinkedList2.java
+						  LinkedList3.java
+						  LinkedList4.java	

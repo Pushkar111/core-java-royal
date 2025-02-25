@@ -1,0 +1,179 @@
+✍ Java StringBuilder Class	📝
+--------------------------
+► Java StringBuilder class is used to create mutable (modifiable) String. The Java StringBuilder class is same as StringBuffer class except that it is non-synchronized. It is available since JDK 1.5.
+
+	
+
+⦿	Important Constructors of StringBuilder Class
+--------------------------------------------------
+
+=================================================================================================================================================
+|				Constructor				|				 								Description												|				
+=================================================================================================================================================	
+|			StringBuilder()				|		It creates an empty String Builder with the initial capacity of 16.								|
+|			StringBuilder(String str)	|		It creates a String Builder with the specified string.											|
+|			StringBuilder(int length)	|		It creates an empty String Builder with the specified capacity as length.						|		
+=================================================================================================================================================
+
+
+
+⦿	Important methods of StringBuilder class
+--------------------------------------------------
+
+=====================================================================================================================================================================================================================================================================================================================================
+|									Method									    |												Description																																															|
+=====================================================================================================================================================================================================================================================================================================================================
+|		public StringBuilder append(String s)									|    It is used to append the specified string with this string. The append() method is overloaded like append(char), append(boolean), append(int), append(float), append(double) etc.                                                              |
+|		public StringBuilder insert(int offset, String s)						|    It is used to insert the specified string with this string at the specified position. The insert() method is overloaded like insert(int, char), insert(int, boolean), insert(int, int), insert(int, float), insert(int, double) etc.           |
+|		public StringBuilder replace(int startIndex, int endIndex, String str)	|    It is used to replace the string from specified startIndex and endIndex.                                                                                                                                                                       |
+|		public StringBuilder delete(int startIndex, int endIndex)				|    It is used to delete the string from specified startIndex and endIndex.                                                                                                                                                                        |
+|		public StringBuilder reverse()											|    It is used to reverse the string.                                                                                                                                                                                                              |
+|		public int capacity()													|    It is used to return the current capacity.                                                                                                                                                                                                     |
+|		public void ensureCapacity(int minimumCapacity)							|    It is used to ensure the capacity at least equal to the given minimum.                                                                                                                                                                         |
+|		public char charAt(int index)											|    It is used to return the character at the specified position.                                                                                                                                                                                  |
+|		public int length()														|    It is used to return the length of the string i.e. total number of characters.                                                                                                                                                                 |
+|		public String substring(int beginIndex)									|    It is used to return the substring from the specified beginIndex.                                                                                                                                                                              |
+|		public String substring(int beginIndex, int endIndex)					|    It is used to return the substring from the specified beginIndex and endIndex.                                                                                                                                                                 |
+=====================================================================================================================================================================================================================================================================================================================================
+
+
+⦿	Java StringBuilder Examples
+-------------------------------
+► Let's see the examples of different methods of StringBuilder class.
+
+1) StringBuilder Class append() Method
+--------------------------------------
+► The append() method concatenates the given argument with this String.
+
+		StringBuilderExample1.java
+		
+		public class StringBuilderExample1
+		{  
+			public static void main(String args[])
+			{  
+//  												012345
+				StringBuilder sb = new StringBuilder("Hello ");  
+				sb.append("Java"); // now original string is changed  
+				System.out.println(sb); // prints Hello Java  
+			}  
+ 		}  
+
+
+2) StringBuilder insert() Method
+--------------------------------------
+► The insert() method inserts the given String with this string at the given position.
+
+		StringBuilderExample2.java
+		
+		public class StringBuilderExample2
+		{  
+			public static void main(String args[])
+			{  									 // 012345
+				StringBuilder sb = new StringBuilder("Hello ");  
+				sb.insert(1,"Java"); // now original string is changed  
+				System.out.println(sb); // prints HJavaello  
+			}  
+		}  
+
+
+3) StringBuilder replace() Method
+--------------------------------------
+► The replace() method replaces the given String from the specified beginIndex and endIndex.
+
+		StringBuilderExample3.java
+		
+		public class StringBuilderExample3
+		{  
+			public static void main(String args[])
+			{  									 // 01234
+				StringBuilder sb = new StringBuilder("Hello");  
+				sb.replace(1, 3, "Java");  
+				System.out.println(sb); // prints HJavalo  
+			}  
+		}  
+		
+4) StringBuilder delete() Method
+--------------------------------------
+► The delete() method of the StringBuilder class deletes the String from the specified beginIndex to endIndex.
+		
+		StringBuilderExample4.java
+		
+		public class StringBuilderExample4
+		{  
+			public static void main(String args[])
+			{  									 // 01234  
+				StringBuilder sb = new StringBuilder("Hello");  
+				sb.delete(1,3);  
+				System.out.println(sb);//prints Hlo  
+			}  
+		}  
+		
+		
+5) StringBuilder reverse() Method
+--------------------------------------
+► The reverse() method of the StringBuilder class reverses the current String.
+
+		StringBuilderExample5.java
+		
+		public class StringBuilderExample5
+		{  
+			public static void main(String args[])
+			{  
+				StringBuilder sb = new StringBuilder("Hello");  
+				sb.reverse();  
+				System.out.println(sb);//prints olleH  
+			}  
+		}  		
+				
+		
+6) StringBuilder capacity() Method
+--------------------------------------
+► The capacity() method of StringBuilder class returns the current capacity of the Builder. The default capacity of the Builder is 16. If the number of character increases from its current capacity, it increases the capacity by (oldcapacity*2)+2. For example if your current capacity is 16, it will be (16*2)+2=34.
+
+		StringBuilderExample6.java
+		
+		public class StringBuilderExample6
+		{  
+			public static void main(String args[])
+			{  
+				StringBuilder sb = new StringBuilder();  
+				System.out.println(sb.capacity());//default 16  
+				sb.append("Hello");  
+				System.out.println(sb.capacity());//now 16  
+				sb.append("java is my favourite language");  
+				System.out.println(sb.capacity());//now (16*2)+2=34 i.e (oldcapacity*2)+2  
+			}  
+		}  		
+		
+7) StringBuilder ensureCapacity() method
+---------------------------------------
+► The ensureCapacity() method of StringBuilder class ensures that the given capacity is the minimum to the current capacity. If it is greater than the current capacity, it increases the capacity by (oldcapacity*2)+2. For example if your current capacity is 16, it will be (16*2)+2=34.
+
+		StringBuilderExample7.java
+		
+		class StringBuilderExample7
+		{  
+			public static void main(String args[])
+			{  
+				StringBuilder sb = new StringBuilder();  
+				System.out.println(sb.capacity()); // default 16  
+				sb.append("Hello");  
+				System.out.println(sb.capacity()); // now 16  
+				sb.append("java is my favourite language");  
+				System.out.println(sb.capacity()); // now (16*2)+2=34 i.e (oldcapacity*2)+2  
+				
+				sb.ensureCapacity(10); // now no change  
+				System.out.println(sb.capacity()); // now 34  
+				sb.ensureCapacity(50); // now (34*2)+2  
+				System.out.println(sb.capacity()); // now 70  
+			}  
+		}  		
+		
+		
+		
+		
+		
+		
+		
+		
+		

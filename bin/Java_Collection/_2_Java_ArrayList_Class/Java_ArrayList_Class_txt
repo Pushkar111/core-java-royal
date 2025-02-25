@@ -1,0 +1,652 @@
+
+													---------------------------------
+													|		Java ArrayList			|
+													---------------------------------
+														
+																	-> ↑ - extends
+																	-> ⇡ - implements
+														
+														Iterable(I)
+															↑
+														Collection(I)
+															↑
+														  List(I)
+														  	⇡																	
+														AbstractList(C)
+															↑
+														ArrayList(C)
+													
+
+
+
+		
+✍ Java ArrayList :-
+--------------------
+► Java "ArrayList" class uses a dynamic array for storing the elements. 
+► It is like an array, but there is no size limit. We can add or remove elements anytime. 
+► So, it is much more flexible than the traditional array. 
+► It is found in the java.util package. 
+► It is like the Vector in C++.
+
+► The "ArrayList" in Java can have the duplicate elements also. 
+► It implements the List interface so we can use all the methods of the List interface here. 
+► The ArrayList maintains the insertion order internally.
+
+► It "extends the AbstractList class" and "implements List interface."
+
+	⦿	 The important points about the Java ArrayList class are:
+	-------------------------------------------------------------		
+			◦  Java ArrayList class can contain duplicate elements.
+			◦  Java ArrayList class maintains insertion order.
+			◦  Java ArrayList class is non synchronized.
+			◦  Java ArrayList allows random access because the array works on an index basis.
+			◦  In ArrayList, manipulation is a little bit slower than the LinkedList in Java 
+			   because a lot of shifting needs to occur if any element is removed from the array list.
+			◦  We can not create an array list of the primitive types, such as int, float, char, etc. 
+			   It is required to use the required wrapper class in such cases. For example:											
+						
+						ArrayList<int> listObj = ArrayList<int>(); // does not work [primitive DataTypes] 
+						ArrayList<Integer> listObj = new ArrayList<Integer>(); // works fine [Wrapper Class]
+						
+			◦  Java ArrayList gets initialized by the size. The size is dynamic in the array list, 
+			   which varies according to the elements getting added or removed from the list.		
+						
+
+⦿	 Hierarchy of ArrayList class
+----------------------------------
+► Java ArrayList class hierarchy :
+		
+		==========================================================================
+			Go in Phothos Folder and see Java ArrayList class hierarchy.png
+		==========================================================================
+
+► As shown in the above diagram, the Java ArrayList class extends AbstractList class which implements the List interface. 
+  The List interface extends the Collection and Iterable interfaces in hierarchical order.
+
+
+⦿	 ArrayList class declaration
+--------------------------------
+► Let's see the declaration for java.util.ArrayList class.
+
+-> Syntax : 
+		
+		public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable  						
+						
+	
+⦿	Constructors of ArrayList 
+-----------------------------					
+						
+		==========================================================================
+			Go in Phothos Folder and see Constructors of ArrayList.png
+		==========================================================================
+				
+	
+⦿	Methods of ArrayList
+------------------------
+
+		==========================================================================
+				Go in Phothos Folder and see Methods of ArrayList.png
+		==========================================================================
+					
+						
+⦿	Java Non-generic Vs. Generic Collection
+---------------------------------------------
+► Java collection framework was non-generic before JDK 1.5. Since 1.5, it is generic.
+
+► Java new generic collection allows you to have only one type of object in a collection. 
+  Now it is type-safe, so typecasting is not required at runtime.
+
+► Let's see the old non-generic example of creating a Java collection.
+		
+		ArrayList listObj = new ArrayList(); //creating old non-generic arraylist  
+
+► Let's see the new generic example of creating java collection.
+
+		ArrayList<String> listObj = new ArrayList<String>(); //creating new generic arraylist  						
+
+-> In a generic collection, we specify the type in angular braces. Now ArrayList is forced to have the only specified type of object in it. 
+   If you try to add another type of object, it gives a compile-time error.						
+						
+		◦  Advantage of Java Generics
+		------------------------------
+		-> There are mainly 3 advantages of generics. They are as follows:
+		
+			1) Type-safety : We can hold only a single type of objects in generics. It doesn?t allow to store other objects.	
+			----------------			
+			-> Without Generics, we can store any type of objects.
+			List list = new ArrayList();    
+			list.add(10);  
+			list.add("10");  
+			
+			-> With Generics, it is required to specify the type of object we need to store.  
+			List<Integer> list = new ArrayList<Integer>();    
+			list.add(10);  
+			list.add("10"); // compile-time error  
+		
+			2) Type casting : Type casting is not required: There is no need to typecast the object.
+			-----------------
+			-> Before Generics, we need to type cast.
+			List list = new ArrayList();    
+			list.add("hello");    
+			String s = (String) list.get(0); // typecasting    
+
+			-> After Generics, we don't need to typecast the object.  
+			List<String> list = new ArrayList<String>();    
+			list.add("hello");    
+			String s = list.get(0);    
+		
+			3) Compile-Time Checking : It is checked at compile time so problem will not occur at runtime. The good programming strategy says it is far better to handle the problem at compile time than runtime.
+			--------------------------
+			List<String> list = new ArrayList<String>();    
+			list.add("hello");    
+			list.add(32); // Compile Time Error    
+
+			
+		◦  Type Parameters
+		-------------------
+		-> The type parameters naming conventions are important to learn generics thoroughly. The common type parameters are as follows:
+			
+			1. 	T - Type
+			2. 	E - Element
+			3. 	K - Key
+			4. 	N - Number
+			5. 	V - Value						
+	
+	
+⦿	Ways to iterate the elements of the collection in Java
+----------------------------------------------------------
+-> There are various ways to traverse the collection elements:
+
+	1)	By Iterator interface.(Traditional Way)
+	2)	By for loop.
+	3)	By for-each loop.
+	4)	By ListIterator interface.[Reverse interate]
+	5)	By forEach() method.
+	6)	By forEachRemaining() method.	
+	
+		ArrayListExample1_AllWays_to_iterate.java						
+		-----------------------------------------
+
+			import java.util.ArrayList;
+			import java.util.Iterator;
+			import java.util.ListIterator;
+			
+			public class ArrayListExample1_AllWays_to_iterate
+			{
+				public static void main(String[] args)
+				{
+					/*
+						  ⦿ Ways to iterate the elements of the collection in Java
+						  ---------------------------------------------------------- 
+						  -> There are various ways to traverse the collection elements:
+						  
+						  1) By Iterator interface.(Traditional Way) 
+						  2) By for loop. 
+						  3) By for-each loop. 
+						  4) By ListIterator interface.[Reverse interate] 
+						  5) By forEach() method.
+						  6) By forEachRemaining() method.
+					*/
+					ArrayList<String> listObj = new ArrayList<String>();
+			
+					listObj.add("Rahul");
+					listObj.add("Sagar");
+					listObj.add("Kunal");
+					listObj.add("Mehul");
+					listObj.add("Ramesh");
+			
+					System.out.println("ArrayList : " + listObj);
+			
+					System.out.println("Different Ways to iterating ArrayList : ");
+			
+					System.out.println("---------------------------------------------------------------------------------");
+					System.out.println("1) First Way to interate listObj (Traditional Way)");
+					Iterator<String> itr1 = listObj.iterator();
+					while (itr1.hasNext())
+					{
+						String str = (String) itr1.next();
+						System.out.println(str);
+					}
+			
+					System.out.println("---------------------------------------------------------------------------------");
+					System.out.println("2) Second Way to interate listObj using Simple for loop");
+					for (int i = 0; i < listObj.size(); i++)
+					{
+						// DownCasting not Require [bcz of Generic]
+						String str = listObj.get(i);
+						System.out.println(str);
+					}
+			
+					System.out.println("---------------------------------------------------------------------------------");
+					System.out.println("3) Third Way to interate listObj using Simple forEach loop");
+					for (String str : listObj)
+					{
+						System.out.println(str);
+					}
+			
+					System.out.println("---------------------------------------------------------------------------------");
+					System.out.println("4) Fourth Way to interate listObj using ListIterator [Reverse interate]");
+					ListIterator<String> itr4 = listObj.listIterator(listObj.size());
+					while (itr4.hasPrevious())
+					{
+						String str = itr4.previous();
+						System.out.println(str);
+					}
+			
+					System.out.println("---------------------------------------------------------------------------------");
+					System.out.println("5) Fifth way to interate listObj using forEach() method:");
+					// The forEach() method is a new feature, introduced in Java 8.
+					listObj.forEach(str -> { // Here, we are using lambda expression
+						System.out.println(str);
+					});
+			
+					System.out.println("---------------------------------------------------------------------------------");
+					System.out.println("6) Sixth way to interate listObj using forEachRemaining() method:");
+					Iterator<String> itr5 = listObj.iterator();
+					itr5.forEachRemaining(str -> {
+						System.out.println(str);
+					});
+			
+				}
+			}
+
+
+⦿	Get and Set ArrayList
+-------------------------									
+► The get() method returns the element at the specified index, whereas the set() method changes the element.
+
+		ArrayListExample2_get_and_set_method.java						
+		-----------------------------------------				
+		
+			import java.util.ArrayList;
+			
+			public class ArrayListExample2_get_and_set_method
+			{
+				public static void main(String[] args)
+				{
+					ArrayList<String> listObj = new ArrayList<String>();
+			
+					listObj.add("Rahul");
+					listObj.add("Sagar");
+					listObj.add("Kunal");
+					listObj.add("Mehul");
+					listObj.add("Ramesh");
+			
+			//		get(int index) -> used to returns element at specific index
+					System.out.println("--------------------------------------------------------------");
+					System.out.println(listObj.get(0));
+					System.out.println(listObj.get(1));
+					System.out.println(listObj.get(2));
+					System.out.println(listObj.get(3));
+					System.out.println(listObj.get(4));
+			
+			//		set(int index, String element) -> used to set element at require index
+					System.out.println("--------------------------------------------------------------");
+					listObj.set(2, "Ram");
+			
+					for (String str : listObj)
+					{
+						System.out.println(str);
+					}
+				}
+			}						
+						
+						
+⦿	How to Sort ArrayList
+-------------------------									
+► The java.util package provides a utility class Collections, 
+  which has the static method sort(). Using the Collections.sort() method, we can easily sort the ArrayList.						
+						
+		ArrayListExample3_SortArrayList.java						
+		-------------------------------------				
+			
+			import java.util.ArrayList;
+			import java.util.Collections;
+			
+			public class ArrayListExample3_SortArrayList
+			{
+				public static void main(String[] args)
+				{
+					/* Creating list of String */
+					ArrayList<String> listObj = new ArrayList<String>();
+			
+					listObj.add("Rahul");
+					listObj.add("Sagar");
+					listObj.add("Kunal");
+					listObj.add("Mehul");
+					listObj.add("Ramesh");
+			
+					System.out.println("Before Sorting : ");
+					System.out.println("------------------------------------------------");
+					for (String str : listObj)
+					{
+						System.out.println(str);
+					}
+			
+					// Collections.sort() -> used to sort the list
+					Collections.sort(listObj);
+			
+					System.out.println("\nAfter Sorting : ");
+					System.out.println("------------------------------------------------");
+					for (String str : listObj)
+					{
+						System.out.println(str);
+					}
+			
+					/* Creating list of Integer */
+					ArrayList<Integer> listObj2 = new ArrayList<Integer>();
+			
+					listObj2.add(5);
+					listObj2.add(4);
+					listObj2.add(3);
+					listObj2.add(2);
+					listObj2.add(1);
+			
+					System.out.println("\nBefore Sorting : ");
+					System.out.println("------------------------------------------------");
+					for (Integer integer : listObj2)
+					{
+						System.out.println(integer);
+					}
+			
+					Collections.sort(listObj2);
+			
+					System.out.println("\nAfter Sorting : ");
+					System.out.println("------------------------------------------------");
+					for (Integer integer : listObj2)
+					{
+						System.out.println(integer);
+					}
+				}
+			}
+	
+	
+⦿	User-defined class objects in Java ArrayList						
+--------------------------------------------------									
+► Let's see an example where we are storing Student class object in an array list.									
+				
+		ArrayListExample4_User_defined_Class_Student.java
+		--------------------------------------------------
+		
+			import java.util.ArrayList;
+			
+			class Student
+			{
+				private int rno;
+				private String name;
+				private int std;
+			
+				public Student()
+				{
+			
+				}
+			
+				public Student(int rno, String name, int std)
+				{
+					this.rno = rno;
+					this.name = name;
+					this.std = std;
+				}
+			
+				public int getRno()
+				{
+					return rno;
+				}
+			
+				public void setRno(int rno)
+				{
+					this.rno = rno;
+				}
+			
+				public String getName()
+				{
+					return name;
+				}
+			
+				public void setName(String name)
+				{
+					this.name = name;
+				}
+			
+				public int getStd()
+				{
+					return std;
+				}
+			
+				public void setStd(int std)
+				{
+					this.std = std;
+				}
+			
+			}
+			
+			public class ArrayListExample4_User_defined_Class_Student
+			{
+				public static void main(String[] args)
+				{
+					Student s1 = new Student(1, "Rahul", 12);
+					Student s2 = new Student(2, "Sagar", 13);
+					Student s3 = new Student(3, "Kunal", 14);
+			
+					ArrayList<Student> listObj = new ArrayList<Student>();
+			
+					listObj.add(s1);
+					listObj.add(s2);
+					listObj.add(s3);
+			
+					for (Student obj : listObj)
+					{
+						if (obj instanceof Student)
+						{
+							Student s = (Student) obj;
+							System.out.println(s.getRno() + " " + s.getName() + " " + s.getStd());
+						} else
+						{
+							System.out.println(obj);
+						}
+					}
+				}
+			}
+	
+	
+	
+⦿	Java ArrayList Serialization and Deserialization Example				
+-------------------------------------------------------------									
+► 
+		ArrayListExample5_Serialization_and_Deserialization.java
+		---------------------------------------------------------
+			package Java_Collection.Java_ArrayList_Class_2;
+	
+			import java.util.*;
+				
+			public class ArrayListExample5_Serialization_and_Deserialization
+			{
+				public static void main(String[] args)
+				{
+					ArrayList<String> listObj = new ArrayList<String>();
+			
+					listObj.add("Rahul");
+					listObj.add("Sagar");
+					listObj.add("Kunal");
+					listObj.add("Mehul");
+					listObj.add("Ramesh");
+			
+					try
+					(
+							 // Serialization 
+							FileOutputStream fout = new FileOutputStream("C:\\Users\\pushk\\eclipse-workspace\\GEN_35_ROYAL\\src\\Java_Collection\\Java_ArrayList_Class_2\\ArrayListExample5_Serialization_and_Deserialization.txt");
+							ObjectOutputStream out = new ObjectOutputStream(fout);
+							
+							 // DeSerialization 
+							FileInputStream fin = new FileInputStream("C:\\Users\\pushk\\eclipse-workspace\\GEN_35_ROYAL\\src\\Java_Collection\\Java_ArrayList_Class_2\\ArrayListExample5_Serialization_and_Deserialization.txt");
+							ObjectInputStream oin = new ObjectInputStream(fin);
+					)
+					{
+						out.writeObject(listObj);
+						
+						ArrayList<String> list = (ArrayList<String>)oin.readObject();
+						System.out.println(list);
+					
+					} catch (Exception e)
+					{
+						e.printStackTrace();
+					}
+				}
+			}
+	
+⦿	Java ArrayList isEmpty() check Example				
+------------------------------------------									
+► 						
+		ArrayListExample6_isEmpty.java
+		------------------------------
+			package Java_Collection.Java_ArrayList_Class_2;
+
+			import java.util.ArrayList;
+			
+			public class ArrayListExample6_isEmpty
+			{
+				public static void main(String[] args)
+				{
+					ArrayList<String> listObj = new ArrayList<String>();
+			
+					System.out.println("Is ArrayList Empty: " + listObj.isEmpty());
+			
+					listObj.add("Ravi");
+					listObj.add("Vijay");
+					listObj.add("Ajay");
+			
+					System.out.println("After Insertion");
+					System.out.println("Is ArrayList Empty: " + listObj.isEmpty());
+				}
+			}
+			
+			
+	
+⦿	Java ArrayList Book Example				
+-------------------------------									
+► 						
+		ArrayListExample7_Book.java
+		---------------------------
+			package Java_Collection.Java_ArrayList_Class_2;
+
+			import java.util.ArrayList;
+			
+			class Book
+			{
+				private int id;
+				private String name;
+				private String author;
+				private String publisher;
+				private int quntity;
+			
+				public Book(int id, String name, String author, String publisher, int quntity)
+				{
+					this.id = id;
+					this.name = name;
+					this.author = author;
+					this.publisher = publisher;
+					this.quntity = quntity;
+				}
+			
+				public int getId()
+				{
+					return id;
+				}
+			
+				public void setId(int id)
+				{
+					this.id = id;
+				}
+			
+				public String getName()
+				{
+					return name;
+				}
+			
+				public void setName(String name)
+				{
+					this.name = name;
+				}
+			
+				public String getAuthor()
+				{
+					return author;
+				}
+			
+				public void setAuthor(String author)
+				{
+					this.author = author;
+				}
+			
+				public String getPublisher()
+				{
+					return publisher;
+				}
+			
+				public void setPublisher(String publisher)
+				{
+					this.publisher = publisher;
+				}
+			
+				public int getQuntity()
+				{
+					return quntity;
+				}
+			
+				public void setQuntity(int quntity)
+				{
+					this.quntity = quntity;
+				}
+			
+			}
+			
+			public class ArrayListExample7_Book
+			{
+			
+				public static void main(String[] args)
+				{
+			
+					ArrayList<Book> listObj = new ArrayList<Book>();
+			
+					Book b1 = new Book(101, "Travel", "Jhon", "Scribner", 12);
+					Book b2 = new Book(102, "Killer", "Harper ", "JCo.", 13);
+					Book b3 = new Book(103, "1984", "George", "Warburg", 14);
+					Book b4 = new Book(104, "Pride", "Austen", "Egerton", 15);
+					Book b5 = new Book(105, "Rider", "Salinger", "Company", 16);
+			
+					listObj.add(b1);
+					listObj.add(b2);
+					listObj.add(b3);
+					listObj.add(b4);
+					listObj.add(b5);
+			
+					listObj.forEach(b -> {
+						System.out.println(b.getId() + "\t" + b.getName() + "\t" + b.getAuthor() + "\t" + b.getPublisher() + "\t"
+								+ b.getQuntity());
+					});
+				}
+			}
+					
+
+⦿	Java ArrayList SizeCapacity Example				
+-----------------------------------------													
+► 						
+		ArrayListExample8_SizeCapacity.java
+		-----------------------------------
+			package Java_Collection.Java_ArrayList_Class_2;
+			
+			import java.util.ArrayList;
+			
+			public class ArrayListExample8_SizeCapacity
+			{
+				public static void main(String[] args)
+				{
+					ArrayList<String> listObj1 = new ArrayList<String>();
+					System.out.println("Size of listObj1 : " + listObj1.size());
+			
+					ArrayList<String> listObj2 = new ArrayList<String>(3);
+					System.out.println("Size of listObj2 : " + listObj2.size());
+				}
+			}
+			
+											

@@ -1,0 +1,18 @@
+javaString_toUpperCase_toLowerCase
+----------------------------------
+
+Java String toUpperCase() and toLowerCase() method
+	The Java String toUpperCase() method converts this String into uppercase letter and String toLowerCase() method into lowercase letter.
+			
+			Stringoperation1.java
+			
+			public class Stringoperation1  
+			{  
+				public static void main(String ar[])  
+				{  
+					String s = "Sachin";    
+					System.out.println(s.toUpperCase()); // SACHIN    
+					System.out.println(s.toLowerCase()); // sachin    
+					System.out.println(s); // Sachin(no change in original)    
+				}  
+			}  

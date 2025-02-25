@@ -1,0 +1,56 @@
+✍ Java Member Inner class
+--------------------------
+► A non-static class that is created inside a class but outside a method is called *member inner class*.
+► It is also known as a regular inner class. 
+► It can be declared with access modifiers like public, default, private, and protected.
+
+⦿	Syntax:
+-----------
+	class Outer
+	{  
+		 //code  
+		 class Inner
+		 {  
+		  //code  
+		  // method
+		 }  
+	}  
+
+
+
+⦿	Java Member Inner Class Example 1
+-------------------------------------
+► In this example, we are creating a msg() method in the member inner class that is accessing the private data member of the outer class.
+
+	TestMemberOuter1.java
+	---------------------
+		public class TestMemberOuter1 {
+			private int data = 100;
+		
+			class inner {
+				void disp() {
+					System.out.println("Data: " + data);
+				}
+			}
+		
+			public static void main(String[] args) {
+				TestMemberOuter1 objOuter = new TestMemberOuter1();
+		
+				TestMemberOuter1.inner objInner = objOuter.new inner();
+		
+				objInner.disp();
+			}
+		}
+
+
+
+
+
+How to instantiate Member Inner class in Java?
+
+
+
+	◦  
+	.
+	
+	

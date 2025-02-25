@@ -1,0 +1,190 @@
+Java String isEmpty()
+------------------------
+The Java String class isEmpty() method checks if the input string is empty or not. Note that here empty means the number of characters contained in a string is zero.
+
+
+Signature
+----------
+The signature or syntax of string isEmpty() method is given below:
+	
+		• public boolean isEmpty()    
+
+
+Returns
+--------
+true if length is 0 otherwise false.
+
+
+Since
+------
+1.6
+
+
+
+Internal implementation
+------------------------
+
+	public boolean isEmpty() 
+	{    
+	    return value.length == 0;    
+	}
+    
+        
+Java String isEmpty() method example 1
+---------------------------------------------
+		
+		FileName: StringIsEmptyExample1.java
+		---------
+				
+		public class IsEmptyExample1
+		{  
+			public static void main(String args[])
+			{  
+				String s1 = "";  
+				String s2 = "javaTpoint";  
+				  
+				System.out.println(s1.isEmpty());  // true
+				System.out.println(s2.isEmpty());  // false
+			}
+		}  
+		
+		
+
+Java String isEmpty() Method Example 2
+---------------------------------------------
+
+		FileName: StringIsEmptyExample2.java
+		---------
+		
+		public class StringIsEmptyExample2 
+		{  
+		    public static void main(String[] args) 
+		    {  
+		        String s1 = "";    
+		        String s2 = "Javatpoint";             
+		
+		        // Either length is zero or isEmpty is true  
+		        if(s1.length() == 0 || s1.isEmpty())
+		        {
+		            System.out.println("String s1 is empty");  		        
+		        }  
+		        else
+		        {		        
+		       		System.out.println("s1");        
+		        } 
+		        
+		        if(s2.length() == 0 || s2.isEmpty()) 
+		        {
+		            System.out.println("String s2 is empty");  		        
+		        } 
+		        else
+		        {
+		        	System.out.println(s2);  		        
+		        } 
+		    }  
+		}  
+
+
+Empty Vs. Null Strings
+---------------------------------------------
+
+Earlier in this tutorial, we have discussed that the empty strings contain zero characters. However, the same is true for a null string too. A null string is a string that has no value.
+
+	String str = ""; // empty string  
+	String str1 = null; // null string. It is also not containing any characters.  
+
+The isEmpty() method is not fit for checking the null strings. The following example shows the same.
+
+
+		FileName: StringIsEmptyExample3.java
+		--------
+		
+		public class StringIsEmptyExample3   
+		{  
+			// main method  
+			public static void main(String argvs[])  
+			{  
+				String str = null;  
+				if(str.isEmpty())  
+				{  
+					System.out.println("The string is null.");  
+				}  
+				else  
+				{  
+					System.out.println("The string is not null.");  
+				}  
+			}  
+		}  
+		
+		-> Here, we can use the == operator to check for the null strings.
+
+		FileName: StringIsEmptyExample3.java
+		--------
+				
+		class StringIsEmptyExample3  
+		{  
+			// main method  
+			public static void main(String argvs[])  
+			{  
+				String str = null;  
+				if(str == null)  
+				{  
+					System.out.println("The string is null.");  
+				}  
+				else  
+				{  
+					System.out.println("The string is not null.");  
+				}  
+			}  
+		}  
+
+		
+		
+Blank Strings
+---------------
+Blank strings are those strings that contain only white spaces. The isEmpty() method comes in very handy to check for the blank strings. Consider the following example.
+
+		FileName: StringIsEmptyExample4.java
+		---------
+				
+		public class StringIsEmptyExample4   
+		{  
+			// main method  
+			public static void main(String argvs[])  
+			{  
+				// a blank string  
+				String str = "     ";  
+				int size = str.length();  
+				  
+				// trim the white spaces and after that  
+				// if the string results in the empty string   
+				// then the string is blank; otherwise, not.  
+				if(size == 0)  
+				{  
+					System.out.println("The string is empty. \n");  
+				}  
+				else if(size > 0 && str.trim().isEmpty())  
+				{  
+					System.out.println("The string is blank. \n");  
+				}  
+				else  
+				{  
+					System.out.println("The string is not blank. \n");  
+				}  
+				  
+				str = " Welcome to JavaTpoint.  ";  
+				size = str.length();  
+				if(size == 0)  
+				{  
+					System.out.println("The string is empty. \n");  
+				}  
+				if(size > 0 && str.trim().isEmpty())  
+				{  
+					System.out.println("The string is blank. \n");  
+				}  
+				else  
+				{  
+					System.out.println("The string is not blank. \n");  
+				}  
+			}  
+		}  

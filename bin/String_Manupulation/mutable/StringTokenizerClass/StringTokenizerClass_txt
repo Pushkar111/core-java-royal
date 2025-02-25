@@ -1,0 +1,197 @@
+						---------------------------------
+						|✍ TOPICS COVER IN THIS FILE	|	
+						---------------------------------
+						|⦿	StringTokenizer             |
+						|⦿	Methods of StringTokenizer  |
+						|⦿	Example of StringTokenizer  |	
+						---------------------------------
+
+✍ Java Multi-catch block
+---------------------------------
+► 	
+
+✍ StringTokenizer in Java
+-----------------------------------
+► The java.util.StringTokenizer class allows you to break a String into tokens. It is simple way to break a String. It is a legacy class of Java.
+
+► It doesn't provide the facility to differentiate numbers, quoted strings, identifiers etc. like StreamTokenizer class. We will discuss about the StreamTokenizer class in I/O chapter.
+
+► In the StringTokenizer class, the delimiters can be provided at the time of creation or one by one to the tokens.		
+
+	
+	⦿	Example of StringTokenizer
+	-----------------------------------
+			==========================================================================
+					Go in Phothos Folder and see string-tokenizer-in-java.png
+			==========================================================================
+		
+		
+⦿	Constructors of the StringTokenizer Class
+---------------------------------------------
+► There are 3 constructors defined in the StringTokenizer class.	
+		
+=====================================================================================================================================		
+|							Constructor							|					Description										|
+=====================================================================================================================================
+|StringTokenizer(String str)									|   It creates StringTokenizer with specified string.				|
+|StringTokenizer(String str, String delim)						|   It creates StringTokenizer with specified string and delimiter.	|
+|StringTokenizer(String str, String delim, boolean returnValue)	|   It creates StringTokenizer with specified string,               |
+|																    delimiter and returnValue. If return value is true,             |
+|																    delimiter characters are considered to be tokens.               |
+|																    If it is false,                                                 |
+|																    delimiter characters serve to separate tokens.		            |
+=====================================================================================================================================
+
+
+⦿	Methods of the StringTokenizer Class                               
+---------------------------------------------
+► The six useful methods of the StringTokenizer class are as follows:
+
+			==========================================================================
+					Go in Phothos Folder and see string-tokenizer-in-java2.png
+			==========================================================================
+
+
+=====================================================================================================================================		
+|			Methods						|				Description																	|
+=====================================================================================================================================		
+|       boolean hasMoreTokens()			|        It checks if there is more tokens available.                                       |
+|       String nextToken()				|        It returns the next token from the StringTokenizer object.                         |
+|       String nextToken(String delim)	|        It returns the next token based on the delimiter.                                  |
+|       boolean hasMoreElements()		|        It is the same as hasMoreTokens() method.                                          |
+|       Object nextElement()			|        It is the same as nextToken() but its return type is Object.                       |
+|       int countTokens()				|        It returns the total number of tokens.                                             |
+=====================================================================================================================================		
+
+
+⦿	Example of StringTokenizer Class
+------------------------------------
+► Let's see an example of the StringTokenizer class that tokenizes a string "my name is khan" on the basis of whitespace.
+
+		Simple.java
+		
+		import java.util.StringTokenizer;  
+		
+		public class Simple
+		{  
+			 public static void main(String args[])
+			 {  
+				  StringTokenizer st = new StringTokenizer("my name is Pushkar"," ");  
+				  while (st.hasMoreTokens()) 
+				  {  
+				      System.out.println(st.nextToken());  
+				  }  
+			 }  
+		}  
+           
+⦿	Example of nextToken(String delim) method of the StringTokenizer class      
+--------------------------------------------------------------------------
+		TestApp.java
+
+		import java.util.StringTokenizer;    
+
+		 public class TestApp 
+		 {
+			public static void main(String[] args) 
+			{
+				StringTokenizer st = new StringTokenizer("My,name,is,Pushkar");
+		
+				while (st.hasMoreElements()) 
+				{
+					System.out.println(st.nextToken(","));
+				}
+		
+				System.out.println("--------------------------------------------");
+		
+				StringTokenizer st2 = new StringTokenizer("My,name,is_Pushkar");
+				System.out.println(st2.nextToken("_"));
+			}
+		}
+		          
+		           
+⦿	Example of hasMoreTokens() method of the StringTokenizer class   
+--------------------------------------------------------------------------
+		TestApp1.java
+
+		import java.util.StringTokenizer;    
+
+		public class TestApp1 
+		{
+			public static void main(String args[]) 
+			{
+				StringTokenizer st = new StringTokenizer("My name is Pushkar", " ");
+		
+				while (st.hasMoreTokens()) 
+				{
+					System.out.println(st.nextToken());
+				}
+		
+				System.out.println("-------------------------------------");
+				StringTokenizer st2 = new StringTokenizer("My,name,is,Pushkar", ",");
+		
+				while (st2.hasMoreTokens()) 
+				{
+					System.out.println(st2.nextToken());
+				}
+			}
+		}
+
+
+⦿	Example of nextElement() method of the StringTokenizer class
+--------------------------------------------------------------------------
+
+		TestApp.java
+		
+		import java.util.StringTokenizer;    
+
+		public class TestApp 
+		{
+			public static void main(String args[]) 
+			{
+				StringTokenizer st = new StringTokenizer("My name is Pushkar", " ");
+		
+				while (st.hasMoreElements()) 
+				{
+					System.out.println(st.nextElement());
+				}
+		
+				System.out.println("-------------------------------------");
+				StringTokenizer st2 = new StringTokenizer("My,name,is,Pushkar", ",");
+		
+				while (st2.hasMoreElements()) 
+				{
+					System.out.println(st2.nextElement());
+				}
+			}
+		}
+		
+
+⦿	Example of countTokens() method of the StringTokenizer class
+--------------------------------------------------------------------------
+		TestApp.java
+		
+		import java.util.StringTokenizer;
+		
+		public class TestApp 
+		{
+			public static void main(String[] args) 
+			{
+		
+				StringTokenizer st = new StringTokenizer("My name is Pushkar");
+				System.out.println(st.countTokens());
+		
+				System.out.println("------------------------------");
+		
+				StringTokenizer st2 = new StringTokenizer("My,name,is-Pushkar", "-");
+				System.out.println(st2.countTokens());
+		
+			}
+		}
+
+
+
+
+
+
+
+

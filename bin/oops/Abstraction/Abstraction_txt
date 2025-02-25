@@ -1,0 +1,118 @@
+Abstraction :-
+-------------------
+==> Abstraction is a key concept in object-oriented programming(OOPS) Concept that allows you to focus on the essential features of an object and 
+	ignore the non-essential details
+	
+==> In java, Abstraction can be achieved by Using abstract class and interfaces.
+
+==> Example : WhatsApp - User1 - msg - Send - User2
+			  SBI Bank - Login
+			  
+			  						Types of Abstraction
+			  						--------------------
+			  								|
+			  			-----------------------------------------
+			  			|										|			
+			  		(1) 0 to 100%							(2) 100%
+			  		-------------							-------------
+			  		abstract class							interface(Pure Abstraction)
+			  		
+
+	// Abstraction 
+	class A
+	{
+		1) Dm's
+		
+		2) Methods
+			1) abstract method
+				ex.. public abstract void test1();
+			
+			2) non-abstract method
+				ex.. public void test2()
+					 {
+				
+					 }
+					 		
+		3) Constructor
+	}
+			  		
+_____________________________________________________________________________________________________________________________________________
+			  								[abstract class]
+			  										|
+			  									Vehicle(public abstract void getSpec(); -- rule)
+			  										|
+					  			-----------------------------------------
+								|					|					|
+							TwVehicle			LmvVehicle			HmvVehicle -- abstract class
+							getSpec()			getSpec()			abstract void test1();	  										
+_____________________________________________________________________________________________________________________________________________
+			  								
+			
+			
+	// interfaces(Pure Abstraction)	
+	-------------------------------
+	java-8 version
+	
+	
+	interface A
+	{
+		1) Constant Variable (public static final)
+		
+		2) Abstract Methods (public abstract)
+		
+		3) Non-abstract Methods(java-8) --- [static, default, private]
+	}
+	
+_____________________________________________________________________________________________________________________________________________
+	
+											-------------
+											| 	Notes   |
+											-------------
+											
+						class				interfaces						interfaces
+						  |	--> extends			|	--> extends					| --> implements
+						class				interfaces						  class
+						
+						
+_____________________________________________________________________________________________________________________________________________
+						
+						
+	interface(100%) abstraction
+	---------------------------
+	
+	interface - pure abstract class
+	
+	interface A
+	{
+		1) Constant Variables -- [public static final]
+		ex.. int no = 10; // compiler
+		
+		2) abstract methods -- [public abstract]
+		ex..
+			public abstract void test1();
+			public abstract void test2();
+		
+		3) Non-abstract methods -- java-8 -- [default(8th), static(8th), private(9th)]
+		ex..
+			default void test3()
+			{
+				// Operation Part
+				test5();
+				other code;
+				test5();
+				other code;
+				test5();
+				other code;
+				test5();
+			}
+			
+			static void test4()
+			{
+				// Operation part
+			}
+			
+			private void test5()
+			{
+				// Operation part
+			}
+	}

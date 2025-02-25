@@ -1,0 +1,174 @@
+✍ Java throw Exception	
+------------------------
+► In Java, exceptions allows us to write good quality codes where the errors are checked at the compile time instead of runtime and we can create custom exceptions making the code recovery and debugging easier.
+
+✍ Java throw keyword
+----------------------
+► The Java throw keyword is used to throw an exception explicitly.
+
+► We specify the exception object which is to be thrown. The Exception has some message with it that provides the error description. These exceptions may be related to user inputs, server, etc.
+
+► We can throw either checked or unchecked exceptions in Java by throw keyword. It is mainly used to throw a custom exception. We will discuss custom exceptions later in this section.
+
+
+► We can also define our own set of conditions and throw an exception explicitly using throw keyword. For example, we can throw ArithmeticException if we divide a number by another number. Here, we just need to set the condition and throw exception using throw keyword.
+
+	► The syntax of the Java throw keyword is given below.
+	
+		throw Instance i.e.,
+		
+		===========================================		
+		throw new exception_class("error message");
+		===========================================  
+
+
+	► Let's see the example of throw IOException.
+
+		===========================================  
+		throw new IOException("sorry device error");   
+		===========================================  
+
+► Where the Instance must be of type Throwable or subclass of Throwable. For example, Exception is the sub class of Throwable and the user-defined exceptions usually extend the Exception class.
+
+
+⦿	Java throw keyword Example
+------------------------------
+	
+	Example 1: Throwing Unchecked Exception
+	---------------------------------------------
+	► In this example, we have created a method named validate() that accepts an integer as a parameter. 
+	  If the age is less than 18, we are throwing the ArithmeticException otherwise print a message welcome to vote.
+	
+		TestThrow1.java
+		
+		► In this example, we have created the validate method that takes integer value as a parameter. 
+		  If the age is less than 18, we are throwing the ArithmeticException otherwise print a message welcome to vote.
+		
+		
+		public class TestThrow1 
+		{
+			// function to check if person is eligible to vote or not
+			public static void validate(int age) 
+			{
+				if (age < 18) 
+				{
+					// throw Arithmetic exception if not eligible to vote
+					try 
+					{
+						throw new ArithmeticException("Person is not eligible to vote");
+					} catch (Exception e) 
+					{
+						System.out.println(e);
+					}
+				} else 
+				{
+					System.out.println("Person is eligible to vote!!");
+				}
+			}
+		
+			public static void main(String args[]) 
+			{
+				// calling the function
+				validate(13);
+				System.out.println("rest of the code...");
+			}
+		}
+		
+		
+		
+	Example 2: Throwing Checked Exception
+	---------------------------------------------
+		TestThrow2.java
+	
+		import java.io.*;  
+		  
+		public class TestThrow2 
+		{   
+		  
+		    //function to check if person is eligible to vote or not   
+		    public static void method() throws FileNotFoundException 
+		    {  
+		  
+		        FileReader file = new FileReader("C:\\Users\\Anurati\\Desktop\\abc.txt");  
+		        BufferedReader fileInput = new BufferedReader(file);  
+		  
+		      
+		        throw new FileNotFoundException();  
+		      
+	    	}  
+	    	
+	    	//main method  
+	    	public static void main(String args[])
+	    	{  
+		        try  
+		        {  
+		            method();  
+		        }   
+		        catch (FileNotFoundException e)   
+		        {  
+		            e.printStackTrace();  
+		        }  
+	        	System.out.println("rest of the code...");    
+	  		}    
+		}  
+		
+		
+			
+	Example 3: Throwing User-defined Exception
+	---------------------------------------------
+	► exception is everything else under the Throwable class.
+			
+		TestThrow3.java
+		
+		// class represents user-defined exception  
+		public class UserDefinedException extends Exception  
+		{  
+		    public UserDefinedException(String str)  
+		    {  
+		        // Calling constructor of parent Exception  
+		        super(str);  
+		    }  
+		}  
+		
+		// Class that uses above MyException  
+		public class TestThrow3  
+		{  
+		    public static void main(String args[])  
+		    {  
+		        try  
+		        {  
+		            // throw an object of user defined exception  
+		            throw new UserDefinedException("This is user-defined exception");  
+		        }  
+		        catch (UserDefinedException e)  
+		        {  
+		            System.out.println("Caught the exception");  
+		            // Print the message from MyException object  
+		            System.out.println(e.getMessage());  
+		        }  
+		    }  
+		}   		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		  

@@ -1,0 +1,69 @@
+✍ Java Nested Interface
+---------------------------
+► An interface, i.e., declared within another interface or class, is known as a nested interface. 
+
+✍ Rules :-
+-----------
+	◦  The nested interface must be public if it is declared inside the interface, but it can have any access modifier if declared within the class.
+	◦  Nested interfaces are declared static
+
+
+⦿	Example of nested interface which is declared within the interface
+----------------------------------------------------------------------
+	TestNestedInterface1.java
+		
+		interface A
+		{  
+			  void show();  
+			  interface B
+			  {  
+			  		 void test1();  
+			  }  
+		}  
+		
+		class TestNestedInterface1 implements A.B
+		{  
+			  public void test1()
+			  {
+			  		 System.out.println("test1() :: nested interface");
+			  }  
+			  
+			  public static void main(String args[])
+			  {  
+				  	 A.B obj = new TestNestedInterface1(); //upcasting here  
+				  	 obj.test1();  
+			  }  
+		}  
+		
+		
+		
+⦿	Example of nested interface which is declared within the class
+----------------------------------------------------------------------
+
+	TestNestedInterface2.java
+		
+		class A
+		{  
+			  interface B
+			  {  
+			  		 void test1();  
+			  }  
+		}  
+		  
+		class TestNestedInterface2 implements A.B
+		{  
+			  public void test1()
+			  {
+			 		  System.out.println("Hello nested interface");
+			  }  
+			  
+			  public static void main(String args[])
+			  {  
+					  A.B obj = new TestNestedInterface2(); //upcasting here  
+					  obj.test1();  
+			  }  
+		}  		
+				
+				
+				
+				

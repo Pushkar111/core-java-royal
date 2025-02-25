@@ -1,0 +1,34 @@
+
+=============
+ArrayList - add - non-synchronized 
+vector - add - synchronized -> threadSafe(At a Time Single Thread Execuation)
+LinkedList - add - non-synchronized 
+=============
+		StringBuilder -- non-synchronized 
+		StringBuffer -- synchronized -> threadSafe(At a Time Single Thread Execuation)
+=============
+
+
+
+
+=============
+
+
+-- arrayList - fix Data - store - and - display
+-- vector - application - use - multithreading
+--LinkedList - when we need - [insert, update and delete]
+
+
+=============
+HaseSet - insertion -cancel
+		- duplicate - cancel
+
+
+LinkedHaseSet - insertion -yes
+			  - duplicate - cancel
+
+TreeSet - sorting - asc
+	     - duplicate - cancel
+=============
+
+Map -- [Same as Dictonary[python]]

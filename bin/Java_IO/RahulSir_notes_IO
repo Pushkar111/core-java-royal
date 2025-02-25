@@ -1,0 +1,97 @@
+✍ Stream (Buffer Area) ==> IO (InputStream (read) / OutputStream (Write))
+---------------------------------------------------------------------------
+
+											✍ Types of Stream ✍ 
+											---------------------
+													  |
+			--------------------------------------------------------------------------------------
+			|										  |											 |
+	1) InputStream (read)					2) OutputStream (Write)						3) ErrorStream
+	►  System.in							►  System.out.println();					►  System.err
+
+		
+⦿	InputStream (read) :-				
+----------------------
+
+► System.in --> Default InputStream ---> Console 
+► ex..
+
+					read(InputStream)
+	Program <----------------------------- Console
+
+	Scanner sc = new Scanner(System.in);
+ 	int no = sc.nextInt();
+
+
+⦿	OutputStream (Write) :-				
+------------------------
+► System.out --> Default OutputStream ---> Console 
+► ex..
+
+					Write(OutputStream)
+	Program <----------------------------- Console
+	
+	System.out.println("Hello");
+
+
+⦿	ErrorStream :-				
+------------------------
+► System.err --> Default ErrorStream ---> Console 
+► ex..
+
+					error(ErrorStream)
+	Program <----------------------------- Console
+	
+	System.err.println("Hello");
+
+_______________________________________________________________________________________________________________________________________________
+
+⦿	Data :-
+---------
+► There are Two Types of Data is available.
+
+				
+					String							UDO(User Define Objects[Student/Employee/Person/Product])
+					------							---------------------------------------------------------
+		1) Byte Oriented Way 						1) Byte Oriented Way 	
+			► read (FileInputStream) 	                ► read (FileInputStream) 
+			► write (FileOutputStream)                  ► write (FileOutputStream)
+		
+		2) Character Oriented Way 		
+			► read (FileReader) 	
+			► write (FileWriter)		
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

@@ -1,0 +1,84 @@
+
+✍ Java Anonymous inner class
+-----------------------------
+► Java anonymous inner class is an inner class without a name and for which only a single object is created. 
+  An anonymous inner class can be useful when making an instance of an object with certain "extras" such as 
+  overloading methods of a class or interface, without having to actually subclass a class.
+
+► In simple words, a class that has no name is known as an anonymous inner class in Java.
+  It should be used if you have to override a method of class or interface. 
+  
+► Java Anonymous inner class can be created in two ways:
+ 
+		1. Class (may be abstract or concrete).
+		2. Interface
+
+⦿	Java anonymous inner class example using class
+--------------------------------------------------
+
+
+	A.java
+	------
+		public abstract class A {
+			public abstract void test1();
+		}
+
+	Animal.java
+	-----------
+		public abstract class Animal {
+			public static void main(String[] args) {
+		
+				A obj = new A() {
+		
+					@Override
+					public void test1() {
+
+						System.out.println("A :: Test1 ---> " + this);
+		
+					}
+				};
+				obj.test1();
+			}
+		}
+
+
+
+⦿	Java anonymous inner class example using interface
+------------------------------------------------------
+
+
+	B.java
+	------
+		public interface class B {
+			public interface void test1();
+		}
+
+	Bombay.java
+	-----------
+		public abstract class Bombay {
+			public static void main(String[] args) {
+		
+				B obj = new B() {
+		
+					@Override
+					public void test1() {
+		
+						System.out.println("B :: Test1 ---> " + this);
+		
+					}
+				};
+				obj.test1();
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+	◦  
+	.

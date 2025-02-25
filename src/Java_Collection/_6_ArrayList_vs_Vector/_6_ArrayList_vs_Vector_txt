@@ -1,0 +1,17 @@
+✍ Difference between ArrayList and Vector :-
+--------------------------------------------
+► ArrayList and Vector both implements List interface and maintains insertion order.
+
+► However, there are many differences between ArrayList and Vector classes that are given below.
+
+	
+		==========================================================================
+					Go in Phothos Folder and see ArrayList_vs_Vector.png
+		==========================================================================
+
+		==========================================================================
+						Go in Phothos Folder and see Diagram.png
+		==========================================================================
+
+
+
