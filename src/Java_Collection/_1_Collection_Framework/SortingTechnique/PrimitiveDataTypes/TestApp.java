@@ -14,7 +14,7 @@ public class TestApp
 		listObj.add("Mehul");
 		listObj.add("Kunal");
 		listObj.add("Lalit");
-		
+
 		System.out.println("Before Sorting");
 		System.out.println("---------------------------");
 		for (String str : listObj)
@@ -22,9 +22,8 @@ public class TestApp
 			System.out.println(str);
 		}
 
-		
 		Collections.sort(listObj);
-		System.out.println("Before Sorting");
+		System.out.println("After Sorting");
 		System.out.println("---------------------------");
 		for (String str : listObj)
 		{

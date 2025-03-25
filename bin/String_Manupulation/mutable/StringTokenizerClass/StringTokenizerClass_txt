@@ -6,10 +6,6 @@
 						|⦿	Example of StringTokenizer  |	
 						---------------------------------
 
-✍ Java Multi-catch block
----------------------------------
-► 	
-
 ✍ StringTokenizer in Java
 -----------------------------------
 ► The java.util.StringTokenizer class allows you to break a String into tokens. It is simple way to break a String. It is a legacy class of Java.

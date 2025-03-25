@@ -1,5 +1,7 @@
 /*
- 								Vehicle(getSpec())
+  									interface
+  										|
+ 								Vehicle(getSpec())  - interface -- [constant variable , abstract methods, non-abstract methods]
  										|
  						-------------------------------------
  						|				|					|
@@ -23,7 +25,7 @@ public interface Vehicle
 
 	void getSpec(); // [By Default : public abstract] By Compiler
 
-//  3) Non-abstract Methods -- java-8 [default(8th), static(8th), private(9th)]
+//  3) Non-abstract Methods -- after java-8 allows [default(8th), static(8th), private(9th)]
 	default void test3()
 	{
 		// operation part

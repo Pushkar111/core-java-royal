@@ -9,15 +9,11 @@ public class TestApp1
 	{
 		if (age < 18)
 		{
-
 			// raise custom-exception
 			throw new InvalidAgeForVoteException("\n\t\"Invalid age,\n\t\tPlease Enter age above 18\"");
-
 		} else
 		{
-
 			System.out.println("Welcome for Vote.");
-
 		}
 	}
 
@@ -30,14 +26,10 @@ public class TestApp1
 
 		try
 		{
-
 			isValidForVote(age);
-
 		} catch (InvalidAgeForVoteException e)
 		{
-
 			e.printStackTrace();
-
 		}
 
 		System.out.println("Main method---line no----31");

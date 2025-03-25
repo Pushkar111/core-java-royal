@@ -1,6 +1,14 @@
 package oops.Inheritance.mli;
 
-public class Person {
+/*
+						Person
+						  |					
+						Employee	
+						  |			
+						TechEmployee
+*/
 
+public class Person
+{
 	String name;
 }

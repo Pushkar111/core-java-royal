@@ -1,0 +1,21 @@
+Syntax : 
+	
+	
+	for(intialization; condition; inc/dec){
+		 // Body 
+	}
+	
+	
+	// intialization
+	while (condition) {
+		// body 
+		// inc/dec
+	}
+	
+	// intialization
+	do {
+		// body 
+		// inc/dec
+	} while (condition) 
+	
+	

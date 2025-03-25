@@ -1,6 +1,6 @@
 Abstraction :-
 -------------------
-==> Abstraction is a key concept in object-oriented programming(OOPS) Concept that allows you to focus on the essential features of an object and 
+==> Abstraction is a key concept in object-oriented programming(OOPS) Concept that allows you to focus on the essential details and 
 	ignore the non-essential details
 	
 ==> In java, Abstraction can be achieved by Using abstract class and interfaces.
@@ -39,7 +39,7 @@ Abstraction :-
 _____________________________________________________________________________________________________________________________________________
 			  								[abstract class]
 			  										|
-			  									Vehicle(public abstract void getSpec(); -- rule)
+			  									Vehicle(public abstract void getSpec(); -- rule)	
 			  										|
 					  			-----------------------------------------
 								|					|					|

@@ -2,18 +2,24 @@ package Modifiers.Static;
 
 import java.util.Scanner;
 
-public class Student {
-
+public class Student
+{
+	// instance variable -- [Different for each Student]
 	int rno;
 	String name;
 	int std;
+
+	// static variable -- [schoolName is remain same for all Student]
 	static String schoolName;
 
-	public static void setSchoolname(String schoolName) {
+	// Static Method
+	public static void setSchoolname(String schoolName)
+	{
 		Student.schoolName = schoolName;
 	}
 
-	public void scanData() {
+	public void scanData()
+	{
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Enter Rno : ");
@@ -28,28 +34,37 @@ public class Student {
 
 	}
 
-	public void dispData() {
+	public void dispData()
+	{
 		System.out.println(rno + " " + name + " " + std + " " + schoolName);
 	}
 
-	public static void main(String[] args) {
-		Student.schoolName = "DPS";
-		Student s[] = new Student[5];
+	public static void main(String[] args)
+	{
 		Scanner sc = new Scanner(System.in);
 
-		for (int i = 0; i < s.length; i++) {
+		Student.schoolName = "DPS";
+		Student s[] = new Student[5];
+
+		for (int i = 0; i < s.length; i++)
+		{
 			s[i] = new Student();
 			s[i].scanData();
 		}
 
-		for (int i = 0; i < s.length; i++) {
+		for (int i = 0; i < s.length; i++)
+		{
 			s[i].dispData();
 		}
 
-		// static dm's can change by object name but change for all
-		s[2].schoolName = "Meghdoot";
+		// static dm's can change by class Name or static Variable name but change for
+		// all [because static variable has 1 copy for all objects]
+		// if we change by using any object name it shows warning and compiler convert
+		// it by classname
+		Student.schoolName = "Meghdoot";
 
-		for (int i = 0; i < s.length; i++) {
+		for (int i = 0; i < s.length; i++)
+		{
 			s[i].dispData();
 		}
 	}

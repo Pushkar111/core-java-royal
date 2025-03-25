@@ -2,25 +2,31 @@ package oops.Polymorphism.runtime;
 
 import java.util.Scanner;
 
-public class TestApp2 {
+public class TestApp2
+{
 
-	public static void getVehicleInfo(Vehicle vehicle) {
-		if (vehicle instanceof TwVehicle) {
+	public static void getVehicleInfo(Vehicle vehicle)
+	{
+		if (vehicle instanceof TwVehicle)
+		{
 			TwVehicle tw = (TwVehicle) vehicle;
 			tw.getSpec();
 			tw.getTwInfo();
-		} else if (vehicle instanceof LmvVehicle) {
+		} else if (vehicle instanceof LmvVehicle)
+		{
 			LmvVehicle lmv = (LmvVehicle) vehicle;
 			lmv.getSpec();
 			lmv.getLmvInfo();
-		} else if (vehicle instanceof HmvVehicle) {
+		} else if (vehicle instanceof HmvVehicle)
+		{
 			HmvVehicle hmv = (HmvVehicle) vehicle;
 			hmv.getSpec();
 			hmv.getHmvInfo();
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		Vehicle vehicle = null;
 
 		Scanner sc = new Scanner(System.in);
@@ -32,7 +38,8 @@ public class TestApp2 {
 		System.out.println("Enter the Choice : ");
 		int choice = sc.nextInt();
 
-		switch (choice) {
+		switch (choice)
+		{
 		case 1:
 			TwVehicle twObj = new TwVehicle();
 			getVehicleInfo(twObj);

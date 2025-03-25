@@ -2,19 +2,22 @@ package Tasks.conditional_statement;
 
 import java.util.Scanner;
 
-public class IfElse {
+public class IfElse
+{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args)
+	{
 		Scanner sc = new Scanner(System.in);
 		int no1;
 
 		System.out.print("Enter No1 : ");
 		no1 = sc.nextInt();
 
-		if (no1 > 0) {
+		if (no1 > 0)
+		{
 			System.out.println("Enter No is Positive");
-		} else {
+		} else
+		{
 			System.out.println("Enter No is Negative");
 		}
 

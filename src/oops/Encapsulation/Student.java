@@ -1,9 +1,9 @@
 package oops.Encapsulation;
 
-import java.util.Scanner;
-
 /*
-	-> Encapsulation in Java is a process of wrapping code and data together into a single unit, 
+	-> Encapsulation in Java OOPS Feauture which wrapping code and data together into a single unit, 
+	-> Dm's must be Private
+	-> And it is Access and change by Getter and Setter methods
 	-> for example, a capsule which is mixed of several medicines. 
 
 	-> Advantages: 
@@ -62,21 +62,6 @@ public class Student
 		this.std = std;
 	}
 
-	void scanData()
-	{
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Enter rno : ");
-		rno = sc.nextInt();
-		sc.nextLine();
-
-		System.out.println("Enter name : ");
-		name = sc.nextLine();
-
-		System.out.println("Enter std : ");
-		std = sc.nextInt();
-	}
-
 	void dispData()
 	{
 		System.out.println(rno + " " + name + " " + std);
@@ -84,19 +69,14 @@ public class Student
 
 	public static void main(String[] args)
 	{
-		Student s[] = new Student[5];
+		Student s1 = new Student(1, "Rahul", 12);
 
-		for (int i = 0; i < s.length; i++)
-		{
-			s[i] = new Student();
-			s[i].scanData();
-		}
+		s1.dispData();
 
-		for (int i = 0; i < s.length; i++)
-		{
-			s[i].dispData();
+		// modify using setter method
+		s1.setName("Ram");
 
-		}
+		s1.dispData();
 
 	}
 

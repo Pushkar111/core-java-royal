@@ -2,11 +2,13 @@ package oops.Inheritance.hi;
 
 import java.util.Scanner;
 
-public class TechEmployee extends Employee {
+public class TechEmployee extends Employee
+{
 
 	int bonus;
 
-	public void scanData() {
+	public void scanData()
+	{
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("Enter id : ");
@@ -19,12 +21,12 @@ public class TechEmployee extends Employee {
 		System.out.print("Enter Salary : ");
 		salary = sc.nextInt();
 
-		sc.nextLine();
 		System.out.print("Enter Bonus : ");
 		bonus = sc.nextInt();
 	}
 
-	public void dispData() {
+	public void dispData()
+	{
 		System.out.println(id + " " + name + " " + salary + " " + bonus);
 	}
 }

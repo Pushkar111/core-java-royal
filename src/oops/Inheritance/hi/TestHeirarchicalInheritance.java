@@ -1,5 +1,13 @@
 package oops.Inheritance.hi;
 
+/*
+						  A
+						  |
+					-------------
+					|			|
+					B			C
+ 
+*/
 class A
 {
 	void test1()

@@ -2,9 +2,20 @@ package oops.Inheritance.hi;
 
 import java.util.Scanner;
 
-public class TestApp1 {
+/*
+						Employee
+						  	|
+					-----------------
+					|				|
+				AdminEmployee	TechEmployee 
 
-	public static void main(String[] args) {
+ 
+*/
+public class TestApp1
+{
+
+	public static void main(String[] args)
+	{
 
 		Scanner sc = new Scanner(System.in);
 
@@ -14,7 +25,8 @@ public class TestApp1 {
 		System.out.print("Enter the choice : ");
 		int choice = sc.nextInt();
 
-		switch (choice) {
+		switch (choice)
+		{
 
 		case 1:
 			AdminEmployee a = new AdminEmployee();

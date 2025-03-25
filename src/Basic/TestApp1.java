@@ -7,17 +7,17 @@ package Basic;
 
 /*
  * Data Types 
- * 1. Boolean --> 1 bit
- * 2. byte    --> 1 byte
+ * 1. Boolean --> 1 bit 
+ * 2. byte    --> 1 byte [-2^7 to 2^7-1]
  * 
- * 3. char    ---> 2 byte
- * 4. short   ---> 2 byte
+ * 3. char    ---> 2 byte [-2^15 to 2^15-1]
+ * 4. short   ---> 2 byte [-2^15 to 2^15-1]
  * 
- * 5. int     ---> 4 byte
- * 6. long    ---> 8 byte
+ * 5. int     ---> 4 byte [-2^31 to 2^31-1]
+ * 6. long    ---> 8 byte [-2^63 to 2^63-1]
  * 
- * 5. float   ---> 4 byte
- * 6. double  ---> 8 byte
+ * 5. float   ---> 4 byte [-2^31 to 2^31-1]  
+ * 6. double  ---> 8 byte [-2^63 to 2^63-1]  
  */
 
 class A
@@ -37,6 +37,7 @@ class C
 {
 	public static void main(String args[])
 	{
+
 		System.out.println("C ---> main()");
 	}
 }

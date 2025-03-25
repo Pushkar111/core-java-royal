@@ -2,10 +2,12 @@ package Tasks.for_loop;
 
 import java.util.Scanner;
 
-public class ArmStrongNo {
+public class ArmStrongNo
+{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args)
+	{
+
 		Scanner sc = new Scanner(System.in);
 
 		int no;
@@ -19,7 +21,8 @@ public class ArmStrongNo {
 		dup = no;
 
 		// digit count
-		for (; no > 0;) {
+		for (; no > 0;)
+		{
 			dc++;
 			no /= 10;
 		}
@@ -28,20 +31,27 @@ public class ArmStrongNo {
 
 		no = dup;
 
-		while (no > 0) {
+		while (no > 0)
+		{
 			temp = no % 10;
 
-			if (dc == 1) {
+			if (dc == 1)
+			{
 				m = temp;
-			} else if (dc == 2) {
+			} else if (dc == 2)
+			{
 				m = (temp * temp);
-			} else if (dc == 3) {
+			} else if (dc == 3)
+			{
 				m = (temp * temp * temp);
-			} else if (dc == 4) {
+			} else if (dc == 4)
+			{
 				m = (temp * temp * temp * temp);
-			} else if (dc == 5) {
+			} else if (dc == 5)
+			{
 				m = (temp * temp * temp * temp * temp);
-			} else {
+			} else
+			{
 				break;
 			}
 
@@ -49,9 +59,11 @@ public class ArmStrongNo {
 			no /= 10;
 		}
 
-		if (sum == dup) {
+		if (sum == dup)
+		{
 			System.out.println(dup + " is the Armstrong number");
-		} else {
+		} else
+		{
 			System.out.println(dup + " is not the Armstrong number");
 		}
 

@@ -7,7 +7,6 @@ public class TestArr1D
 
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
 		int SIZE = 5;
 		int a[] = new int[SIZE];
 
@@ -19,9 +18,25 @@ public class TestArr1D
 			a[i] = sc.nextInt();
 		}
 
+		// Simple For Loop
 		for (int i = 0; i < a.length; i++)
 		{
-			System.out.println("a[" + i + "] : " + a[i]);
+			System.out.print(a[i] + " ");
+		}
+
+		System.out.println();
+
+		// Simple For Loop Reversed
+		for (int i = a.length; i > 0; i--)
+		{
+			System.out.print(i + " ");
+		}
+
+		System.out.println();
+		// ForEach Loop
+		for (int e : a)
+		{
+			System.out.print(e + " ");
 		}
 
 	}

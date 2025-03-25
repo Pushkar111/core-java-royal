@@ -3,13 +3,17 @@
 
 package Exception_Handling.Java_try_catch_block_2;
 
-public class TryCatchExample2 {
-	public static void main(String[] args) {
-		try {
+public class TryCatchExample2
+{
+	public static void main(String[] args)
+	{
+		try
+		{
 			int data = 50 / 0; // may throw exception
 		}
 		// handling the exception
-		catch (ArithmeticException e) {
+		catch (ArithmeticException e)
+		{
 			System.out.println(e);
 			e.printStackTrace();
 		}

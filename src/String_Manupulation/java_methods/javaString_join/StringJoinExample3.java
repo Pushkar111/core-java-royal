@@ -1,7 +1,9 @@
 package String_Manupulation.java_methods.javaString_join;
 
-public class StringJoinExample3 {
-	public static void main(String[] args) {
+public class StringJoinExample3
+{
+	public static void main(String[] args)
+	{
 		String str = null;
 
 		/*
@@ -9,7 +11,14 @@ public class StringJoinExample3 {
 		 * The following example confirms the same.
 		 */
 
-		str = String.join(null, "abc", "bcd", "apple");
+		try
+		{
+			str = String.join(null, "abc", "bcd", "apple");
+
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 		System.out.println(str);
 	}
 }

@@ -8,9 +8,11 @@ package oops.Polymorphism.runtime;
 
 import java.util.Scanner;
 
-public class TestApp1 {
+public class TestApp1
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		Vehicle vehicle = null;
 
 		Scanner sc = new Scanner(System.in);
@@ -22,7 +24,8 @@ public class TestApp1 {
 		System.out.println("Enter the Choice : ");
 		int choice = sc.nextInt();
 
-		switch (choice) {
+		switch (choice)
+		{
 		case 1:
 			// Polymorphic Object --> UpCasting
 			// ChildReference Variable converts into ParentReference Variable

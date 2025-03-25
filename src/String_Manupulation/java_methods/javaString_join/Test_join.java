@@ -2,9 +2,11 @@ package String_Manupulation.java_methods.javaString_join;
 
 import java.util.StringJoiner;
 
-public class Test_join {
+public class Test_join
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 
 //		1. Using String.join()
 		String[] words1 = { "Hello", "World", "from", "Java" };
@@ -15,10 +17,11 @@ public class Test_join {
 		String[] words2 = { "Hello", "World", "from", "Java" };
 		StringBuilder sb = new StringBuilder();
 
-		for (int i = 0; i < words2.length; i++) {
-
+		for (int i = 0; i < words2.length; i++)
+		{
 			sb.append(words2[i]);
-			if (i < words2.length - 1) {
+			if (i < words2.length - 1)
+			{
 				sb.append(" ");
 			}
 

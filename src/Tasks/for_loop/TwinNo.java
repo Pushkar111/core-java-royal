@@ -2,10 +2,11 @@ package Tasks.for_loop;
 
 import java.util.Scanner;
 
-public class TwinNo {
+public class TwinNo
+{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args)
+	{
 		int no, dup, sum = 0, mult = 1, temp, i = 0;
 
 		Scanner sc = new Scanner(System.in);
@@ -15,16 +16,19 @@ public class TwinNo {
 
 		dup = no;
 
-		for (; dup > 0;) {
+		for (; dup > 0;)
+		{
 			temp = dup % 10;
 			sum += temp;
 			mult *= temp;
 			dup /= 10;
 		}
 
-		if (sum == mult) {
+		if (sum == mult)
+		{
 			System.out.println(no + " is Twin");
-		} else {
+		} else
+		{
 			System.out.println(no + " is not Twin");
 		}
 

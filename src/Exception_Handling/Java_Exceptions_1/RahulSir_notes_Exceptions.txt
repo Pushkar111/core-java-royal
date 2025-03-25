@@ -90,9 +90,9 @@ HOME-------------------[A-TASK]
 				  |	
 	---------------------------------------------------------
 	|--checked						|--Unchecked
-FileNotFoundException					   RuntimeException(class)	
-SQLException							|
-....   						-- ArithmeticException
+FileNotFoundException			RuntimeException(class)	
+SQLException						|
+....   					-- ArithmeticException
 						-- NullPointerException
 						-- ArrayIndexoutofBoundException
 						-- StringIndexoutofBoundException

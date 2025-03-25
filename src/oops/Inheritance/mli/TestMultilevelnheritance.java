@@ -32,5 +32,9 @@ public class TestMultilevelnheritance
 		obj.test1();
 		obj.test2();
 		obj.test3();
+
+		B b = new B();
+		b.test1();
+		b.test2();
 	}
 }

@@ -2,10 +2,11 @@ package Tasks.for_loop;
 
 import java.util.Scanner;
 
-public class SumDigit {
+public class SumDigit
+{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args)
+	{
 		int no, sum = 0, temp;
 
 		Scanner sc = new Scanner(System.in);
@@ -13,7 +14,8 @@ public class SumDigit {
 		System.out.print("Enter No : ");
 		no = sc.nextInt();
 
-		for (; no > 0;) {
+		for (; no > 0;)
+		{
 			temp = no % 10;
 			sum += temp;
 			no /= 10;

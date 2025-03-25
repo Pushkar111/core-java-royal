@@ -2,13 +2,16 @@ package oops.cls;
 
 import java.util.Scanner;
 
-public class Student {
-
+public class Student
+{
+	// instance variables [Dm's]
 	int rno;
 	String name;
 	int std;
 
-	public void scanData() {
+	// [mf's]
+	public void scanData()
+	{
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("Enter Rno : ");
@@ -20,14 +23,16 @@ public class Student {
 		std = sc.nextInt();
 	}
 
-	public void dispData() {
+	public void dispData()
+	{
 		System.out.println(rno + " " + name + " " + std);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		// Student -> class
 		// s -> Reference variable (intentiallty)
-		// new -. keyword
+		// new -> keyword
 		// Student() -> object of Student class (intentially)
 		/*
 		 * Student s1 = new Student(), s2 = new Student(), s3 = new Student(), s4 = new
@@ -40,12 +45,14 @@ public class Student {
 
 		Student s[] = new Student[5];
 
-		for (int i = 0; i < s.length; i++) {
+		for (int i = 0; i < s.length; i++)
+		{
 			s[i] = new Student();
 			s[i].scanData();
 		}
 
-		for (int i = 0; i < s.length; i++) {
+		for (int i = 0; i < s.length; i++)
+		{
 			s[i].dispData();
 			s[i] = null;
 		}

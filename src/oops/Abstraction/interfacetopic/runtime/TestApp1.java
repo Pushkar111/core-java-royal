@@ -38,6 +38,9 @@ public class TestApp1
 			// ParentReference Variable converts into ChildReference Variable
 			TwVehicle twObj = (TwVehicle) vehicle;
 			twObj.getTwInfo();
+			twObj.test1();
+			twObj.test2();
+			twObj.test3();
 			break;
 
 		case 2:
@@ -46,6 +49,9 @@ public class TestApp1
 
 			LmvVehicle lmvObj = (LmvVehicle) vehicle;
 			lmvObj.getLmvInfo();
+			lmvObj.test1();
+			lmvObj.test2();
+			lmvObj.test3();
 			break;
 
 		case 3:
@@ -54,12 +60,16 @@ public class TestApp1
 
 			HmvVehicle hmvObj = (HmvVehicle) vehicle;
 			hmvObj.getHmvInfo();
+			hmvObj.test1();
+			hmvObj.test2();
+			hmvObj.test3();
 			break;
 
 		default:
 			System.out.println("Invalid Choice");
 			break;
 		}
+		Vehicle.test4();
 	}
 
 }

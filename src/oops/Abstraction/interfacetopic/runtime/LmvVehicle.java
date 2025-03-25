@@ -1,22 +1,27 @@
 package oops.Abstraction.interfacetopic.runtime;
 
-public class LmvVehicle implements Vehicle {
-
-	public void getSpec() {
+public class LmvVehicle implements Vehicle
+{
+	@Override
+	public void getSpec()
+	{
 		System.out.println("LmvVehicle :: getSpec()");
 	}
 
-	public void getLmvInfo() {
+	public void getLmvInfo()
+	{
 		System.out.println("LmvVehicle :: getLmvInfo()");
 	}
 
 	@Override
-	public void test1() {
+	public void test1()
+	{
 		System.out.println("LmvVehicle :: test1()");
 	}
 
 	@Override
-	public void test2() {
+	public void test2()
+	{
 		System.out.println("LmvVehicle :: test2()");
 	}
 }
