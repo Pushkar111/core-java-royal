@@ -37,6 +37,7 @@
 ⦿	ErrorStream :-				
 ------------------------
 ► System.err --> Default ErrorStream ---> Console 
+
 ► ex..
 
 					error(ErrorStream)

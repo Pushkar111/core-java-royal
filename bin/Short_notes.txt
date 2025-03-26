@@ -1,0 +1,450 @@
+CH-1 
+						Source Code
+							|
+						Java Compiler [JDE] -- [javac fileName.java]
+							|
+						Byte Code [machine independent] -- [classFile]
+							|
+						Executed by JVM [JIT - just in time compiler/Java Interpreter] -- [[java fileName]]
+							|
+						implement by JRE
+
+
+
+
+Features of Java 
+------------------
+	1. Simple
+	2. OOPS
+	3. Platform Independent
+	4. Iterpreted
+	5. Portable
+	6. High Performance
+	7. Security
+	8. Architecture Neutral
+	9. Dynamic
+	10. Multithreaded
+	11. Distributed
+	12. Robust
+
+
+
+OOPS [Object Oriented Programming]
+----------------------------------
+	1. Object
+	2. Class 
+	3. Inheritance
+	4. Polymorphism
+	5. Abstraction
+	6. Encapsulation
+	
+
+Data Types 
+------------------
+	1. boolean [1-bit]
+	2. byte    [1-byte] [-2^7 to 2^7-1]
+	
+	3. char	   [2-byte] [-2^15 to 2^15-1]	
+	4. short   [2-byte] [-2^15 to 2^15-1]	
+	
+	5. int     [4-byte] [-2^31 to 2^31-1]	 
+	6. long    [8-byte] [-2^63 to 2^63-1]	 
+	
+	7. float   [4-byte] [-2^31 to 2^31-1]	 
+	8. double  [8-byte] [-2^63 to 2^63-1]	 
+
+
+
+Types of Operators 
+------------------
+	1. Arithmetic Operator : +, - , *, /, %
+	2. Assignment Operator : =, +=, -=, *=, /=, %=
+	3. Relational Operator : <, >, <=, >=, ==, !=, instanceof
+	4. Logical Operator    : &&[Logical AND], ||[Logical OR]
+	5. Bitwise Operator    : &[Bitwise AND], | [Bitwise Inclusive OR], ^[Bitwise Exclusive OR]
+	6. Shift Operator 	   : <<, >>, >>>
+	7. Ternary Operator    :  ? :
+	8. Unary Operator 	   : exp++, exp--, ++exp, --exp
+
+
+Garbage Collection (GC)
+-----------------------
+- Garbage Collection is an "automatic memory management" feature in many programming languages (like Java, C#, Python) 
+  that reclaims memory occupied by objects that are no longer in use by the program.
+
+- How Garbage Collection Works:
+	1. The GC identifies "unreachable objects" (objects that are no longer referenced by any active part of the program).
+
+	2. It "frees the memory occupied" by these objects to prevent memory leaks.
+
+	3. It may also compact memory to reduce fragmentation.
+
+- finalize() Method (Java)
+	The finalize() method is a "protected method" in the "Object class" in Java that is called by the garbage collector before an object is destroyed.
+
+Ex...
+	public class Example {
+		@Override
+		protected void finalize() throws Throwable {		
+			System.out.println("Finalize called: Cleaning up resources");
+			super.finalize(); // Call Object.finalize()
+		}
+
+		public static void main(String[] args) {
+			Example obj = new Example();
+			obj = null; // Make object eligible for GC
+			System.gc(); // Suggest JVM to run GC (not guaranteed)
+		}
+	}
+
+- Best Alternative to finalize():
+	Use AutoCloseable with try-with-resources for deterministic cleanup:
+
+Ex...
+	public class Resource implements AutoCloseable {
+		@Override
+		public void close() {
+			System.out.println("Resource closed explicitly");
+		}
+
+		public static void main(String[] args) {
+			try (Resource res = new Resource()) {
+				// Use resource
+			} // Automatically calls close()
+		}
+	}
+=====================================================================================================================
+CH-2 [Eclipse --> Tasks Folder ---> rahul sir ]
+
+if
+if...else
+if...else if...else
+nested
+
+for Loop
+	Simple forloop
+	forEach
+	Labelled forLoop
+while
+do while
+
+switch statement
+
+break;
+continue;
+
+
+
+package college_java_lab;
+
+import java.util.Scanner;
+
+public class _7_Pattern
+{
+	/*
+	 
+    1
+   212
+  32123
+ 4321234
+543212345
+
+	 */
+
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("How many rows which u want to print :");
+		int SIZE = sc.nextInt();
+
+		for (int i = 1; i <= SIZE; i++)
+		{
+			// Left space
+			
+			/*
+			for (int k = SIZE - i; k >= 1; k--)
+			{
+				System.out.print(" ");
+			}
+			*/
+			System.out.print(" ".repeat(SIZE - i));
+			
+			
+			// Left part
+			for (int j = i; j >= 1; j--)
+			{
+				System.out.print(j);
+			}
+			// Right part
+			for (int j = 2; j <= i; j++)
+			{
+				System.out.print(j);
+			}
+
+			System.out.println();
+		}
+	}
+}
+
+=====================================================================================================================
+CH-3,4,5 --> Arrays, OOPS 
+[Starts from page no 50 in ppt]
+
+	
+-- Array Folder ----> Ref - notes Dharmik
+	1. 1D
+	2. 2D
+	3. Arrays Class
+	4. System.arraycopy()
+
+-- Modifiers --> 
+	1. Static topic 
+		Student.java
+		Employee.java
+	2. Image of Access Modifiers
+	3. final topic
+		Final keyword
+		Final methods
+		Final Class
+		
+
+-- OOPS Folder ----> Ref - notes Dharmik  + PPT pgno 50
+	0. StudentThis.java :--- For Constructor Overloading
+	
+	
+	1. Object
+		- Entity that has state or behavior 
+		- instance of class 
+		- Syntax:  TestApp obj = new TestApp();
+		
+	2. Class 
+		- Class is collection of DM's + MF's
+		- Class is Blueprint of where object is created 
+		- Syntax:  class <className> {
+						// Data Fields [dm's]
+						// Member Function [dm's]
+				   }		
+		- Ex... class Student {
+					// dm's
+					int rno;
+					String name;
+					int std;
+					
+					// mf's
+					void scanData() {}
+					void dispData() {}
+				}
+				   
+	3. Inheritance
+		- When one class contains all properties and behavior of it's parent class is called inheritance
+		- use for code reusability
+		- use for optimise the code
+		- Inheritace --> "Parent-Child" Relation --> "IS-A" Relation
+		- it is used to achieve run time polymorphism [vehicle Example]
+		- Syntax : 
+			class <ChildClassName> extends <ParentClassName> {
+				// access parent mf's by creating child class object
+			}
+		- 5 Types --- [not Supports ---> Multiple, Hybrid --> DDP [Deadly Diamond Problem]]
+			1. Simple	
+						A
+						|
+						B
+
+			2. Multilevel
+						A
+						|
+						B
+						|
+						C
+			
+			3. Hierarchical
+						A
+						|
+				-----------------
+				|				|
+				B				C
+			4. Multiple
+			
+				A				B
+				|				|
+				-----------------
+						|
+						C
+			
+			5. Hybrid [Combination of 2 or more]
+
+						A
+						|
+				-----------------
+				|				|
+				B				C		
+				-----------------
+						|
+						C
+						
+			
+	4. Polymorphism
+		- Polymorphism --> Greek Word 
+							- poly 	   ==> Many	
+							- morphism ==> Forms
+		- Polymorphism --> Many Forms --> Means One Task is perform by many ways is called Polymorphism
+		- in java, Polymorphism achieve by 
+					1. Method overloading -- [Compile Time Polymorphism -- static binding --- Early Binding] 
+					-> Class having multiple methods with same name and Different Parameters is called Method Overloading
+						1) By Changing number of arguments
+						2) By Changing Data Type 
+					2. Method Overriding -- [Run Time Polymorphism -- dynamic binding --- Late Binding]
+					-> if Child Class(sub class) have same method which declared in parent class(Super class) is called Method Overriding.
+					-> Provided Specification implementation of Parent Class Method in Child
+					---> Rules: 
+						1) Method must have same name as in the parent class
+						2) Method must have same paramter in the parent class
+						3) It must be an IS-A Relationship (Inheritance)
+		Ex.... A "Man" at same time it is "Person" and "Employee" both
+		
+		
+	5. Abstraction
+		-  Abstraction is a key concept in object-oriented programming(OOPS) Concept that allows you to focus on the essential details and 
+			ignore the non-essential details
+		- Hiding the implementation Details to User and Showing only functionality is called Abstraction.
+		- In Java, Abstraction is achieve by 
+					1. abstract topic [0 to 100%]
+					2. interface topic [100%] (Pure Abstraction)
+		
+	6. Encapsulation
+		- Encapsulation in Java OOPS Feauture which wrapping code and data together into a single unit, 
+		- we can create purely Encapsulation Class in java By Making all Data Members[dm's] of class are "private"
+		- also that private dm's are set and get by getter and setter methods 
+ 		Ex... Capsule Mixed with saveral Medicines.
+			
+
+--Java_Date_Class [Folder in Eclipse] 
+-- Java_Random_Class [Folder in Eclipse] 
+
+
+
+
+--- OOPS/Super --> Super Keyword [Folder in Eclipse]
+--- OOPS/Aggregation --> // Aggregation: Employee "HAS-A" Address
+
+
+--- Wrapper classes [ppt-195]
+		- converts primitve to object and object to primitve is called Wrapper Class
+		- Two Concepts 
+			1) Autoboxing : Automatic convertion of primitve to object 
+						  : since java 5 Integer.valueOf(primitiveVariable) method is used, now not used
+				- boolean -> Boolean
+				- byte    -> Byte
+				- char	  -> Character
+				- short   -> Short
+				- int     -> Integer
+				- long	  -> Long
+				- float   -> Float
+				- double  -> Double
+				Ex...
+					public class WrapperExample1 
+					{
+						public static void main(String args[]) 
+						{
+							int a = 10;
+							Integer x = Integer.valueOf(a); //converting int into Integer explicitly
+							Integer y = a; //autoboxing, now compiler will write Integer.valueOf(a) internally
+							System.out.println(a + "  " + x + " " + y);
+						}
+					}
+
+				
+			2) Unboxing   : Automatic convertion of object to primitve
+				Ex...
+					public class WrapperExample2 
+					{
+						public static void main(String args[]) 
+						{
+							Integer a = new Integer(5);
+							int x = a.intValue(); //converting Integer to int explicitly
+							int y = a; //unboxing, now compiler will write a.intValue() internally
+							System.out.println(a + " " + x + " " + y);
+						}
+					}
+
+
+
+
+
+
+
+
+class Time {
+    int hours, minutes;
+
+    public Time(int hours, int minutes) {
+        this.hours = hours;
+        this.minutes = minutes;
+    }
+
+    Time addTime(Time t) {
+        int TotalMinutes = this.minutes + t.minutes; // 20+20 = 40
+        int newHours = this.hours + t.hours + TotalMinutes / 60; // 3+2+40/60 = 3+2+0 = 5
+        int newMinutes = TotalMinutes % 60; // 40%60 = 40 
+        return new Time(newHours, newMinutes);
+    }
+
+    void display() {
+        System.out.println(hours + " hours, " + minutes + " minutes");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Time t1 = new Time(3, 20);
+        Time t2 = new Time(2, 20);
+        Time t3 = t1.addTime(t2);
+        t3.display();
+    }
+}
+
+---
+
+package Tasks.Time_Distance_Class_Task;
+
+class DISTANCE
+{
+	int km, m;
+
+	public DISTANCE(int km, int m)
+	{
+		this.km = km;
+		this.m = m;
+	}
+
+	DISTANCE add(DISTANCE d)
+	{
+		int totalMeters = this.m + d.m;
+		int newKm = this.km + d.km + totalMeters / 1000;
+		int newM = totalMeters % 1000;
+
+		return new DISTANCE(newKm, newM);
+	}
+
+	void display()
+	{
+		System.out.println("Km = " + km + ", M = " + m);
+	}
+}
+
+public class TestApp2
+{
+	public static void main(String[] args)
+	{
+		DISTANCE d1 = new DISTANCE(2, 300);
+		DISTANCE d2 = new DISTANCE(2, 900);
+
+		d1.display();
+		d2.display();
+
+		DISTANCE d3 = d1.add(d2);
+		d3.display();
+	}
+}
